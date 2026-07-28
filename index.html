@@ -1,367 +1,1256 @@
 <!DOCTYPE HTML>
 <!--
-	Dimension by HTML5 UP
-	html5up.net | @ajlkn
-	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+	Amanat Transport - Single-File Web Application
+	Logistics & Fleet Business Landing Page
 -->
 <html>
 	<head>
 		<title>Amanat Transport</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-		<link rel="stylesheet" href="assets/css/main.css" />
-		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:ital,wght@0,300;0,600;1,300;1,600&display=swap" rel="stylesheet">
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
+
+		<style>
+/* Reset & Core Styles */
+html, body, div, span, applet, object,
+iframe, h1, h2, h3, h4, h5, h6, p, blockquote,
+pre, a, abbr, acronym, address, big, cite,
+code, del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var, b,
+u, i, center, dl, dt, dd, ol, ul, li, fieldset,
+form, label, legend, table, caption, tbody,
+tfoot, thead, tr, th, td, article, aside,
+canvas, details, embed, figure, figcaption,
+footer, header, hgroup, menu, nav, output, ruby,
+section, summary, time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+
+body {
+	line-height: 1;
+	-webkit-text-size-adjust: none;
+	background: #1b1f22;
+	color: #ffffff;
+	font-family: "Source Sans Pro", sans-serif;
+	font-weight: 300;
+	font-size: 1rem;
+	line-height: 1.65;
+}
+
+ol, ul {
+	list-style: none;
+}
+
+blockquote, q {
+	quotes: none;
+}
+
+blockquote:before, blockquote:after, q:before, q:after {
+	content: '';
+	content: none;
+}
+
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+mark {
+	background-color: transparent;
+	color: inherit;
+}
+
+input::-moz-focus-inner {
+	border: 0;
+	padding: 0;
+}
+
+input, select, textarea {
+	-moz-appearance: none;
+	-webkit-appearance: none;
+	-ms-appearance: none;
+	appearance: none;
+}
+
+@-ms-viewport {
+	width: device-width;
+}
+
+@media screen and (max-width: 480px) {
+	html, body {
+		min-width: 320px;
+	}
+}
+
+html {
+	box-sizing: border-box;
+	font-size: 16pt;
+}
+
+*, *:before, *:after {
+	box-sizing: inherit;
+}
+
+body.is-preload *, body.is-preload *:before, body.is-preload *:after {
+	-moz-animation: none !important;
+	-webkit-animation: none !important;
+	-ms-animation: none !important;
+	animation: none !important;
+	-moz-transition: none !important;
+	-webkit-transition: none !important;
+	-ms-transition: none !important;
+	transition: none !important;
+}
+
+@media screen and (max-width: 1680px) {
+	html { font-size: 12pt; }
+}
+
+@media screen and (max-width: 736px) {
+	html { font-size: 11pt; }
+}
+
+@media screen and (max-width: 360px) {
+	html { font-size: 10pt; }
+}
+
+a {
+	-moz-transition: color 0.2s ease-in-out, background-color 0.2s ease-in-out, border-bottom-color 0.2s ease-in-out;
+	-webkit-transition: color 0.2s ease-in-out, background-color 0.2s ease-in-out, border-bottom-color 0.2s ease-in-out;
+	-ms-transition: color 0.2s ease-in-out, background-color 0.2s ease-in-out, border-bottom-color 0.2s ease-in-out;
+	transition: color 0.2s ease-in-out, background-color 0.2s ease-in-out, border-bottom-color 0.2s ease-in-out;
+	border-bottom: dotted 1px rgba(255, 255, 255, 0.5);
+	text-decoration: none;
+	color: inherit;
+}
+
+a:hover {
+	border-bottom-color: transparent;
+}
+
+strong, b {
+	color: #ffffff;
+	font-weight: 600;
+}
+
+em, i {
+	font-style: italic;
+}
+
+p {
+	margin: 0 0 1.5rem 0;
+}
+
+h1, h2, h3, h4, h5, h6 {
+	color: #ffffff;
+	font-weight: 600;
+	line-height: 1.5;
+	margin: 0 0 1rem 0;
+	text-transform: uppercase;
+	letter-spacing: 0.2rem;
+}
+
+h1 a, h2 a, h3 a, h4 a, h5 a, h6 a {
+	color: inherit;
+	text-decoration: none;
+}
+
+h1.major, h2.major, h3.major, h4.major, h5.major, h6.major {
+	border-bottom: solid 1px #ffffff;
+	width: -moz-max-content;
+	width: -webkit-max-content;
+	width: -ms-max-content;
+	width: max-content;
+	padding-bottom: 0.5rem;
+	margin: 0 0 2rem 0;
+}
+
+h1 {
+	font-size: 2.25rem;
+	line-height: 1.3;
+	letter-spacing: 0.5rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	line-height: 1.4;
+	letter-spacing: 0.5rem;
+}
+
+h3 { font-size: 1rem; }
+h4 { font-size: 0.8rem; }
+h5 { font-size: 0.7rem; }
+h6 { font-size: 0.6rem; }
+
+@media screen and (max-width: 736px) {
+	h1 {
+		font-size: 1.75rem;
+		line-height: 1.4;
+	}
+	h2 {
+		font-size: 1.25em;
+		line-height: 1.5;
+	}
+}
+
+/* Form Elements */
+form {
+	margin: 0 0 2rem 0;
+}
+
+form > :last-child {
+	margin-bottom: 0;
+}
+
+form > .fields {
+	display: -moz-flex;
+	display: -webkit-flex;
+	display: -ms-flex;
+	display: flex;
+	-moz-flex-wrap: wrap;
+	-webkit-flex-wrap: wrap;
+	-ms-flex-wrap: wrap;
+	flex-wrap: wrap;
+	width: calc(100% + 3rem);
+	margin: -1.5rem 0 2rem -1.5rem;
+}
+
+form > .fields > .field {
+	-moz-flex-grow: 0;
+	-webkit-flex-grow: 0;
+	-ms-flex-grow: 0;
+	flex-grow: 0;
+	-moz-flex-shrink: 0;
+	-webkit-flex-shrink: 0;
+	-ms-flex-shrink: 0;
+	flex-shrink: 0;
+	padding: 1.5rem 0 0 1.5rem;
+	width: calc(100% - 1.5rem);
+}
+
+form > .fields > .field.half {
+	width: calc(50% - 0.75rem);
+}
+
+@media screen and (max-width: 480px) {
+	form > .fields {
+		width: calc(100% + 3rem);
+		margin: -1.5rem 0 2rem -1.5rem;
+	}
+	form > .fields > .field {
+		padding: 1.5rem 0 0 1.5rem;
+		width: calc(100% - 1.5rem);
+	}
+	form > .fields > .field.half {
+		width: calc(100% - 1.5rem);
+	}
+}
+
+label {
+	color: #ffffff;
+	display: block;
+	font-size: 0.8rem;
+	font-weight: 300;
+	letter-spacing: 0.2rem;
+	line-height: 1.5;
+	margin: 0 0 1rem 0;
+	text-transform: uppercase;
+}
+
+input[type="text"],
+input[type="email"],
+textarea {
+	-moz-appearance: none;
+	-webkit-appearance: none;
+	-ms-appearance: none;
+	appearance: none;
+	-moz-transition: border-color 0.2s ease-in-out, box-shadow 0.2s ease-in-out, background-color 0.2s ease-in-out;
+	-webkit-transition: border-color 0.2s ease-in-out, box-shadow 0.2s ease-in-out, background-color 0.2s ease-in-out;
+	-ms-transition: border-color 0.2s ease-in-out, box-shadow 0.2s ease-in-out, background-color 0.2s ease-in-out;
+	transition: border-color 0.2s ease-in-out, box-shadow 0.2s ease-in-out, background-color 0.2s ease-in-out;
+	background-color: transparent;
+	border-radius: 4px;
+	border: solid 1px #ffffff;
+	color: inherit;
+	display: block;
+	outline: 0;
+	padding: 0 1rem;
+	text-decoration: none;
+	width: 100%;
+}
+
+input[type="text"]:focus,
+input[type="email"]:focus,
+textarea:focus {
+	background: rgba(255, 255, 255, 0.075);
+	border-color: #ffffff;
+	box-shadow: 0 0 0 1px #ffffff;
+}
+
+input[type="text"],
+input[type="email"] {
+	height: 2.75rem;
+}
+
+textarea {
+	padding: 0.75rem 1rem;
+}
+
+/* Icon & Media */
+.icon {
+	text-decoration: none;
+	border-bottom: none;
+	position: relative;
+}
+
+.icon > .label {
+	display: none;
+}
+
+.image {
+	border-radius: 4px;
+	border: 0;
+	display: inline-block;
+	position: relative;
+}
+
+.image:before {
+	pointer-events: none;
+	background-image: url("images/overlay.png");
+	background-color: rgba(19, 21, 25, 0.5);
+	border-radius: 4px;
+	content: '';
+	display: block;
+	height: 100%;
+	left: 0;
+	opacity: 0.5;
+	position: absolute;
+	top: 0;
+	width: 100%;
+}
+
+.image img {
+	border-radius: 4px;
+	display: block;
+}
+
+.image.main {
+	display: block;
+	margin: 2.5rem 0;
+	width: 100%;
+}
+
+.image.main img {
+	width: 100%;
+}
+
+@media screen and (max-width: 736px) {
+	.image.main { margin: 2rem 0; }
+}
+
+@media screen and (max-width: 480px) {
+	.image.main { margin: 1.5rem 0; }
+}
+
+/* Actions & Buttons */
+ul.actions {
+	display: -moz-flex;
+	display: -webkit-flex;
+	display: -ms-flex;
+	display: flex;
+	cursor: default;
+	list-style: none;
+	margin-left: -1rem;
+	padding-left: 0;
+}
+
+ul.actions li {
+	padding: 0 0 0 1rem;
+	vertical-align: middle;
+}
+
+@media screen and (max-width: 480px) {
+	ul.actions:not(.fixed) {
+		-moz-flex-direction: column;
+		-webkit-flex-direction: column;
+		-ms-flex-direction: column;
+		flex-direction: column;
+		margin-left: 0;
+		width: 100% !important;
+	}
+	ul.actions:not(.fixed) li {
+		padding: 1rem 0 0 0;
+		text-align: center;
+		width: 100%;
+	}
+	ul.actions:not(.fixed) li:first-child {
+		padding-top: 0;
+	}
+}
+
+ul.icons {
+	cursor: default;
+	list-style: none;
+	padding-left: 0;
+}
+
+ul.icons li {
+	display: inline-block;
+	padding: 0 0.75em 0 0;
+}
+
+ul.icons li:last-child {
+	padding-right: 0;
+}
+
+ul.icons li a {
+	border-radius: 100%;
+	box-shadow: inset 0 0 0 1px #ffffff;
+	display: inline-block;
+	height: 2.25rem;
+	line-height: 2.25rem;
+	text-align: center;
+	width: 2.25rem;
+}
+
+ul.icons li a:hover {
+	background-color: rgba(255, 255, 255, 0.075);
+}
+
+ul.icons li a:active {
+	background-color: rgba(255, 255, 255, 0.175);
+}
+
+input[type="submit"],
+input[type="reset"],
+input[type="button"],
+button,
+.button {
+	-moz-appearance: none;
+	-webkit-appearance: none;
+	-ms-appearance: none;
+	appearance: none;
+	-moz-transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
+	-webkit-transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
+	-ms-transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
+	transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
+	background-color: transparent;
+	border-radius: 4px;
+	border: 0;
+	box-shadow: inset 0 0 0 1px #ffffff;
+	color: #ffffff !important;
+	cursor: pointer;
+	display: inline-block;
+	font-size: 0.8rem;
+	font-weight: 300;
+	height: 2.75rem;
+	letter-spacing: 0.2rem;
+	line-height: 2.75rem;
+	outline: 0;
+	padding: 0 1.25rem 0 1.35rem;
+	text-align: center;
+	text-decoration: none;
+	text-transform: uppercase;
+	white-space: nowrap;
+}
+
+input[type="submit"]:hover,
+input[type="reset"]:hover,
+.button:hover {
+	background-color: rgba(255, 255, 255, 0.075);
+}
+
+input[type="submit"].primary,
+.button.primary {
+	background-color: #ffffff;
+	color: #1b1f22 !important;
+	font-weight: 600;
+}
+
+/* Background Effect */
+#bg {
+	-moz-transform: scale(1.0);
+	-webkit-transform: scale(1.0);
+	-ms-transform: scale(1.0);
+	transform: scale(1.0);
+	-webkit-backface-visibility: hidden;
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100vh;
+	z-index: 1;
+}
+
+#bg:before, #bg:after {
+	content: '';
+	display: block;
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+}
+
+#bg:before {
+	-moz-transition: background-color 2.5s ease-in-out;
+	-webkit-transition: background-color 2.5s ease-in-out;
+	-ms-transition: background-color 2.5s ease-in-out;
+	transition: background-color 2.5s ease-in-out;
+	-moz-transition-delay: 0.75s;
+	-webkit-transition-delay: 0.75s;
+	-ms-transition-delay: 0.75s;
+	transition-delay: 0.75s;
+	background-image: linear-gradient(to top, rgba(19, 21, 25, 0.5), rgba(19, 21, 25, 0.5)), url("images/overlay.png");
+	background-size: auto, 256px 256px;
+	background-position: center, center;
+	background-repeat: no-repeat, repeat;
+	z-index: 2;
+}
+
+#bg:after {
+	-moz-transform: scale(1.125);
+	-webkit-transform: scale(1.125);
+	-ms-transform: scale(1.125);
+	transform: scale(1.125);
+	-moz-transition: -moz-transform 0.325s ease-in-out, -moz-filter 0.325s ease-in-out;
+	-webkit-transition: -webkit-transform 0.325s ease-in-out, -webkit-filter 0.325s ease-in-out;
+	-ms-transition: -ms-transform 0.325s ease-in-out, -ms-filter 0.325s ease-in-out;
+	transition: transform 0.325s ease-in-out, filter 0.325s ease-in-out;
+	background-image: url("images/bg.jpg");
+	background-position: center;
+	background-size: cover;
+	background-repeat: no-repeat;
+	z-index: 1;
+}
+
+body.is-article-visible #bg:after {
+	-moz-transform: scale(1.0825);
+	-webkit-transform: scale(1.0825);
+	-ms-transform: scale(1.0825);
+	transform: scale(1.0825);
+	-moz-filter: blur(0.2rem);
+	-webkit-filter: blur(0.2rem);
+	-ms-filter: blur(0.2rem);
+	filter: blur(0.2rem);
+}
+
+body.is-preload #bg:before {
+	background-color: #000000;
+}
+
+/* Wrapper Layout */
+#wrapper {
+	display: -moz-flex;
+	display: -webkit-flex;
+	display: -ms-flex;
+	display: flex;
+	-moz-flex-direction: column;
+	-webkit-flex-direction: column;
+	-ms-flex-direction: column;
+	flex-direction: column;
+	-moz-align-items: center;
+	-webkit-align-items: center;
+	-ms-align-items: center;
+	align-items: center;
+	-moz-justify-content: space-between;
+	-webkit-justify-content: space-between;
+	-ms-justify-content: space-between;
+	justify-content: space-between;
+	position: relative;
+	min-height: 100vh;
+	width: 100%;
+	padding: 4rem 2rem;
+	z-index: 3;
+}
+
+#wrapper:before {
+	content: '';
+	display: block;
+}
+
+@media screen and (max-width: 1680px) {
+	#wrapper { padding: 3rem 2rem; }
+}
+
+@media screen and (max-width: 736px) {
+	#wrapper { padding: 2rem 1rem; }
+}
+
+@media screen and (max-width: 480px) {
+	#wrapper { padding: 1rem; }
+}
+
+/* Header */
+#header {
+	display: -moz-flex;
+	display: -webkit-flex;
+	display: -ms-flex;
+	display: flex;
+	-moz-flex-direction: column;
+	-webkit-flex-direction: column;
+	-ms-flex-direction: column;
+	flex-direction: column;
+	-moz-align-items: center;
+	-webkit-align-items: center;
+	-ms-align-items: center;
+	align-items: center;
+	-moz-transition: -moz-transform 0.325s ease-in-out, -moz-filter 0.325s ease-in-out, opacity 0.325s ease-in-out;
+	-webkit-transition: -webkit-transform 0.325s ease-in-out, -webkit-filter 0.325s ease-in-out, opacity 0.325s ease-in-out;
+	-ms-transition: -ms-transform 0.325s ease-in-out, -ms-filter 0.325s ease-in-out, opacity 0.325s ease-in-out;
+	transition: transform 0.325s ease-in-out, filter 0.325s ease-in-out, opacity 0.325s ease-in-out;
+	background-image: radial-gradient(rgba(0, 0, 0, 0.25) 25%, rgba(0, 0, 0, 0) 55%);
+	max-width: 100%;
+	text-align: center;
+}
+
+#header > * {
+	-moz-transition: opacity 0.325s ease-in-out;
+	-webkit-transition: opacity 0.325s ease-in-out;
+	-ms-transition: opacity 0.325s ease-in-out;
+	transition: opacity 0.325s ease-in-out;
+	position: relative;
+	margin-top: 3.5rem;
+}
+
+#header > *:before {
+	content: '';
+	display: block;
+	position: absolute;
+	top: calc(-3.5rem - 1px);
+	left: calc(50% - 1px);
+	width: 1px;
+	height: calc(3.5rem + 1px);
+	background: #ffffff;
+}
+
+#header > :first-child {
+	margin-top: 0;
+}
+
+#header > :first-child:before {
+	display: none;
+}
+
+#header .logo {
+	width: 5.5rem;
+	height: 5.5rem;
+	line-height: 5.5rem;
+	border: solid 1px #ffffff;
+	border-radius: 100%;
+}
+
+#header .logo .icon:before {
+	font-size: 2rem;
+}
+
+#header .content {
+	border-style: solid;
+	border-color: #ffffff;
+	border-top-width: 1px;
+	border-bottom-width: 1px;
+	max-width: 100%;
+}
+
+#header .content .inner {
+	-moz-transition: max-height 0.75s ease, padding 0.75s ease, opacity 0.325s ease-in-out;
+	-webkit-transition: max-height 0.75s ease, padding 0.75s ease, opacity 0.325s ease-in-out;
+	-ms-transition: max-height 0.75s ease, padding 0.75s ease, opacity 0.325s ease-in-out;
+	transition: max-height 0.75s ease, padding 0.75s ease, opacity 0.325s ease-in-out;
+	-moz-transition-delay: 0.25s;
+	-webkit-transition-delay: 0.25s;
+	-ms-transition-delay: 0.25s;
+	transition-delay: 0.25s;
+	padding: 3rem 2rem;
+	max-height: 40rem;
+	overflow: hidden;
+}
+
+#header .content p {
+	text-transform: uppercase;
+	letter-spacing: 0.2rem;
+	font-size: 0.8rem;
+	line-height: 2;
+	margin-bottom: 0.5rem;
+}
+
+#header nav ul {
+	display: -moz-flex;
+	display: -webkit-flex;
+	display: -ms-flex;
+	display: flex;
+	margin-bottom: 0;
+	list-style: none;
+	padding-left: 0;
+	border: solid 1px #ffffff;
+	border-radius: 4px;
+}
+
+#header nav ul li {
+	padding-left: 0;
+	border-left: solid 1px #ffffff;
+}
+
+#header nav ul li:first-child {
+	border-left: 0;
+}
+
+#header nav ul li a {
+	display: block;
+	min-width: 7.5rem;
+	height: 2.75rem;
+	line-height: 2.75rem;
+	padding: 0 1.25rem 0 1.45rem;
+	text-transform: uppercase;
+	letter-spacing: 0.2rem;
+	font-size: 0.8rem;
+	border-bottom: 0;
+}
+
+#header nav ul li a:hover {
+	background-color: rgba(255, 255, 255, 0.075);
+}
+
+#header nav.use-middle:after {
+	content: '';
+	display: block;
+	position: absolute;
+	top: 0;
+	left: calc(50% - 1px);
+	width: 1px;
+	height: 100%;
+	background: #ffffff;
+}
+
+#header nav.use-middle ul li.is-middle {
+	border-left: 0;
+}
+
+body.is-article-visible #header {
+	-moz-transform: scale(0.95);
+	-webkit-transform: scale(0.95);
+	-ms-transform: scale(0.95);
+	transform: scale(0.95);
+	-moz-filter: blur(0.1rem);
+	-webkit-filter: blur(0.1rem);
+	-ms-filter: blur(0.1rem);
+	filter: blur(0.1rem);
+	opacity: 0;
+}
+
+body.is-preload #header {
+	-moz-filter: blur(0.125rem);
+	-webkit-filter: blur(0.125rem);
+	-ms-filter: blur(0.125rem);
+	filter: blur(0.125rem);
+}
+
+body.is-preload #header > * {
+	opacity: 0;
+}
+
+body.is-preload #header .content .inner {
+	max-height: 0;
+	padding-top: 0;
+	padding-bottom: 0;
+	opacity: 0;
+}
+
+@media screen and (max-width: 736px) {
+	#header > * { margin-top: 2rem; }
+	#header > *:before {
+		top: calc(-2rem - 1px);
+		height: calc(2rem + 1px);
+	}
+	#header .logo {
+		width: 4.75rem;
+		height: 4.75rem;
+		line-height: 4.75rem;
+	}
+	#header .logo .icon:before { font-size: 1.75rem; }
+	#header .content .inner { padding: 2.5rem 1rem; }
+}
+
+@media screen and (max-width: 480px) {
+	#header { padding: 1.5rem 0; }
+	#header .content .inner { padding: 2.5rem 0; }
+	#header nav ul {
+		-moz-flex-direction: column;
+		-webkit-flex-direction: column;
+		-ms-flex-direction: column;
+		flex-direction: column;
+		min-width: 10rem;
+		max-width: 100%;
+	}
+	#header nav ul li {
+		border-left: 0;
+		border-top: solid 1px #ffffff;
+	}
+	#header nav ul li:first-child { border-top: 0; }
+	#header nav ul li a {
+		height: 3rem;
+		line-height: 3rem;
+		min-width: 0;
+		width: 100%;
+	}
+	#header nav.use-middle:after { display: none; }
+}
+
+/* Main Articles */
+#main {
+	-moz-flex-grow: 1;
+	-webkit-flex-grow: 1;
+	-ms-flex-grow: 1;
+	flex-grow: 1;
+	-moz-flex-shrink: 1;
+	-webkit-flex-shrink: 1;
+	-ms-flex-shrink: 1;
+	flex-shrink: 1;
+	display: -moz-flex;
+	display: -webkit-flex;
+	display: -ms-flex;
+	display: flex;
+	-moz-align-items: center;
+	-webkit-align-items: center;
+	-ms-align-items: center;
+	align-items: center;
+	-moz-justify-content: center;
+	-webkit-justify-content: center;
+	-ms-justify-content: center;
+	justify-content: center;
+	-moz-flex-direction: column;
+	-webkit-flex-direction: column;
+	-ms-flex-direction: column;
+	flex-direction: column;
+	position: relative;
+	max-width: 100%;
+	z-index: 3;
+}
+
+#main article {
+	-moz-transform: translateY(0.25rem);
+	-webkit-transform: translateY(0.25rem);
+	-ms-transform: translateY(0.25rem);
+	transform: translateY(0.25rem);
+	-moz-transition: opacity 0.325s ease-in-out, -moz-transform 0.325s ease-in-out;
+	-webkit-transition: opacity 0.325s ease-in-out, -webkit-transform 0.325s ease-in-out;
+	-ms-transition: opacity 0.325s ease-in-out, -ms-transform 0.325s ease-in-out;
+	transition: opacity 0.325s ease-in-out, transform 0.325s ease-in-out;
+	padding: 4.5rem 2.5rem 1.5rem 2.5rem;
+	position: relative;
+	width: 40rem;
+	max-width: 100%;
+	background-color: rgba(27, 31, 34, 0.85);
+	border-radius: 4px;
+	opacity: 0;
+}
+
+#main article.active {
+	-moz-transform: translateY(0);
+	-webkit-transform: translateY(0);
+	-ms-transform: translateY(0);
+	transform: translateY(0);
+	opacity: 1;
+}
+
+#main article .close {
+	display: block;
+	position: absolute;
+	top: 0;
+	right: 0;
+	width: 4rem;
+	height: 4rem;
+	cursor: pointer;
+	text-indent: 4rem;
+	overflow: hidden;
+	white-space: nowrap;
+}
+
+#main article .close:before {
+	-moz-transition: background-color 0.2s ease-in-out;
+	-webkit-transition: background-color 0.2s ease-in-out;
+	-ms-transition: background-color 0.2s ease-in-out;
+	transition: background-color 0.2s ease-in-out;
+	content: '';
+	display: block;
+	position: absolute;
+	top: 0.75rem;
+	left: 0.75rem;
+	width: 2.5rem;
+	height: 2.5rem;
+	border-radius: 100%;
+	background-position: center;
+	background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' width='20px' height='20px' viewBox='0 0 20 20' zoomAndPan='disable'%3E%3Cstyle%3Eline %7B stroke: %23ffffff%3B stroke-width: 1%3B %7D%3C/style%3E%3Cline x1='2' y1='2' x2='18' y2='18' /%3E%3Cline x1='18' y1='2' x2='2' y2='18' /%3E%3C/svg%3E");
+	background-size: 20px 20px;
+	background-repeat: no-repeat;
+}
+
+#main article .close:hover:before {
+	background-color: rgba(255, 255, 255, 0.075);
+}
+
+@media screen and (max-width: 736px) {
+	#main article {
+		padding: 3.5rem 2rem 0.5rem 2rem;
+	}
+	#main article .close:before {
+		top: 0.875rem;
+		left: 0.875rem;
+		width: 2.25rem;
+		height: 2.25rem;
+		background-size: 14px 14px;
+	}
+}
+
+@media screen and (max-width: 480px) {
+	#main article {
+		padding: 3rem 1.5rem 0.5rem 1.5rem;
+	}
+}
+
+/* Footer */
+#footer {
+	-moz-transition: -moz-transform 0.325s ease-in-out, -moz-filter 0.325s ease-in-out, opacity 0.325s ease-in-out;
+	-webkit-transition: -webkit-transform 0.325s ease-in-out, -webkit-filter 0.325s ease-in-out, opacity 0.325s ease-in-out;
+	-ms-transition: -ms-transform 0.325s ease-in-out, -ms-filter 0.325s ease-in-out, opacity 0.325s ease-in-out;
+	transition: transform 0.325s ease-in-out, filter 0.325s ease-in-out, opacity 0.325s ease-in-out;
+	width: 100%;
+	max-width: 100%;
+	margin-top: 2rem;
+	text-align: center;
+}
+
+#footer .copyright {
+	letter-spacing: 0.2rem;
+	font-size: 0.6rem;
+	opacity: 0.75;
+	margin-bottom: 0;
+	text-transform: uppercase;
+}
+
+body.is-article-visible #footer {
+	-moz-transform: scale(0.95);
+	-webkit-transform: scale(0.95);
+	-ms-transform: scale(0.95);
+	transform: scale(0.95);
+	-moz-filter: blur(0.1rem);
+	-webkit-filter: blur(0.1rem);
+	-ms-filter: blur(0.1rem);
+	filter: blur(0.1rem);
+	opacity: 0;
+}
+
+body.is-preload #footer {
+	opacity: 0;
+}
+
+/* Noscript Fallbacks */
+body.is-preload #bg:before { background-color: transparent; }
+body.is-preload #header { filter: none; }
+body.is-preload #header > * { opacity: 1; }
+body.is-preload #header .content .inner { max-height: none; padding: 3rem 2rem; opacity: 1; }
+		</style>
 	</head>
 	<body class="is-preload">
 
 		<!-- Wrapper -->
-			<div id="wrapper">
+		<div id="wrapper">
 
-				<!-- Header -->
-					<header id="header">
-						<div class="logo">
-							<i class="fas fa-truck"></i>
-						</div>
-						<div class="content">
-							<div class="inner">
-								<h1>AMANAT transport</h1>
-								<p>"Welcome to Amanat Transport, where reliability meets efficiency in the world of logistics. We specialize in seamless transportation solutions, ensuring businesses connect with their customers with speed and security"<p>"because your success is our destination"</p>
-								</p>
+			<!-- Header -->
+			<header id="header">
+				<div class="logo">
+					<i class="fas fa-truck"></i>
+				</div>
+				<div class="content">
+					<div class="inner">
+						<h1>AMANAT transport</h1>
+						<p>Welcome to Amanat Transport, where reliability meets efficiency in the world of logistics. We specialize in seamless transportation solutions, ensuring businesses connect with their customers with speed and security.</p>
+						<p><em>Because your success is our destination</em></p>
+					</div>
+				</div>
+				<nav>
+					<ul>
+						<li><a href="#intro">Intro</a></li>
+						<li><a href="#work">Work</a></li>
+						<li><a href="#about">About</a></li>
+						<li><a href="#contact">Contact</a></li>
+						<li><a href="https://g.co/kgs/gUo8CB" target="_blank" rel="noopener">Location</a></li>
+					</ul>
+				</nav>
+			</header>
+
+			<!-- Main Content Articles -->
+			<div id="main">
+
+				<!-- Intro -->
+				<article id="intro">
+					<h2 class="major">Intro</h2>
+					<span class="image main"><img src="images/pic01.jpg" alt="Amanat Transport Fleet" /></span>
+					<p>Welcome to Amanat Transport, your reliable partner in logistics. We specialize in seamlessly connecting businesses with their customers through efficient and secure transportation solutions. At Amanat, we understand that timely and safe delivery is crucial in today's fast-paced world, and we are here to make that happen for you.</p>
+					<p>Understanding the pivotal role that transportation plays in the success of businesses, we've curated a service that transcends the conventional. Amanat is not merely a logistics company; it's a facilitator of growth, a guardian of deadlines, and a proponent of unparalleled service. Navigating the intricacies of the modern marketplace, we stand as your steadfast partner, ready to transform challenges into opportunities. In the fast-paced world we inhabit, rest assured that Amanat Transport is here not just to meet but to exceed your expectations, making the intricate journey of supply chains as seamless as possible.</p>
+				</article>
+
+				<!-- Work -->
+				<article id="work">
+					<h2 class="major">Work</h2>
+					<span class="image main"><img src="images/pic02.jpg" alt="Amanat Transport Operations" /></span>
+					<p>At Amanat Transport, we pride ourselves on the artistry of logistics. Our work is a finely tuned symphony of precision and dedication, where every note is a commitment to excellence. From the initiation of your shipment to its final destination, our skilled professionals take the reins, meticulously planning and executing each stage of the transportation process. We understand that in the intricate dance of supply chains, timing is paramount. Therefore, our team deploys cutting-edge technology and industry-best practices to optimize routes, monitor shipments in real-time, and proactively address any challenges that may arise.</p>
+					<p>Our work extends beyond the logistical intricacies; it's a choreography of reliability and timeliness. Amanat Transport is not just a service; it's a promise. Whether you are a startup navigating the complexities of the market or an established enterprise seeking efficiency, our tailored solutions elevate your logistical experience. With a steadfast focus on customer satisfaction, we deliver not just products but peace of mind. Our work is a fusion of expertise and passion, ensuring that each shipment, regardless of its size or destination, receives the meticulous attention it deserves. Partner with Amanat Transport, where our work speaks volumes about our commitment to making your logistics journey as smooth as possible.</p>
+				</article>
+
+				<!-- About -->
+				<article id="about">
+					<h2 class="major">About</h2>
+					<span class="image main"><img src="images/pic03.jpg" alt="About Amanat Transport" /></span>
+					<p>At Amanat Transport, we pride ourselves on being more than just a logistics company. We are a team of dedicated professionals passionate about providing top-notch transport services tailored to meet the unique needs of our clients. With a focus on reliability, safety, and efficiency, we have become a trusted name in the industry.</p>
+					<p>Our commitment extends beyond just delivering goods; we believe in building lasting relationships. Our experienced and skilled team ensures that your shipments reach their destination on time and in pristine condition. We leverage cutting-edge technology to streamline the logistics process, offering you transparency and peace of mind.</p>
+					<p>Whether you are a small business looking to expand your reach or a large enterprise seeking optimized supply chain solutions, Amanat Transport is here to exceed your expectations. Join us on a journey where your cargo is not just a shipment but a commitment to excellence.</p>
+				</article>
+
+				<!-- Contact -->
+				<article id="contact">
+					<h2 class="major">Contact</h2>
+					<form method="post" action="#">
+						<div class="fields">
+							<div class="field half">
+								<label for="name">Name</label>
+								<input type="text" name="name" id="name" required />
+							</div>
+							<div class="field half">
+								<label for="email">Email</label>
+								<input type="email" name="email" id="email" required />
+							</div>
+							<div class="field">
+								<label for="message">Message</label>
+								<textarea name="message" id="message" rows="4" required></textarea>
 							</div>
 						</div>
-						<nav>
-							<ul>
-								<li><a href="#intro">Intro</a></li>
-								<li><a href="#work">Work</a></li>
-								<li><a href="#about">About</a></li>
-								<li><a href="#contact">Contact</a></li>
-								<li><a href="https://g.co/kgs/gUo8CB">location</a></li>
-								<!--<li><a href="#elements">Elements</a></li>-->
-							</ul>
-						</nav>
-					</header>
-
-				<!-- Main -->
-					<div id="main">
-
-						<!-- Intro -->
-							<article id="intro">
-								<h2 class="major">Intro</h2>
-								<span class="image main"><img src="images/pic01.jpg" alt="" /></span>
-								<p>Welcome to Amanath Transport your reliable partner in logistics. We specialize in seamlessly connecting businesses with their customers through efficient and secure transportation solutions. At Amanath, we understand that timely and safe delivery is crucial in today's fast-paced world, and we are here to make that happen for you.</p>
-								<p>Understanding the pivotal role that transportation plays in the success of businesses, we've curated a service that transcends the conventional. Amanath is not merely a logistics company; it's a facilitator of growth, a guardian of deadlines, and a proponent of unparalleled service. Navigating the intricacies of the modern marketplace, we stand as your steadfast partner, ready to transform challenges into opportunities. In the fast-paced world we inhabit, rest assured that Amanath Transport is here not just to meet but to exceed your expectations, making the intricate journey of supply chains as seamless as possible.</p>
-							</article>
-
-						<!-- Work -->
-							<article id="work">
-								<h2 class="major">Work</h2>
-								<span class="image main"><img src="images/pic02.jpg" alt="" /></span>
-								<p>At Amanath Transport, we pride ourselves on the artistry of logistics. Our work is a finely tuned symphony of precision and dedication, where every note is a commitment to excellence. From the initiation of your shipment to its final destination, our skilled professionals take the reins, meticulously planning and executing each stage of the transportation process. We understand that in the intricate dance of supply chains, timing is paramount. Therefore, our team deploys cutting-edge technology and industry-best practices to optimize routes, monitor shipments in real-time, and proactively address any challenges that may arise.</p>
-								<p>Our work extends beyond the logistical intricacies; it's a choreography of reliability and timeliness. Amanath Transport is not just a service; it's a promise. Whether you are a startup navigating the complexities of the market or an established enterprise seeking efficiency, our tailored solutions elevate your logistical experience. With a steadfast focus on customer satisfaction, we deliver not just products but peace of mind. Our work is a fusion of expertise and passion, ensuring that each shipment, regardless of its size or destination, receives the meticulous attention it deserves. Partner with Amanath Transport, where our work speaks volumes about our commitment to making your logistics journey as smooth as possible.</p>
-							</article>
-
-						<!-- About -->
-							<article id="about">
-								<h2 class="major">About</h2>
-								<span class="image main"><img src="images/pic03.jpg" alt="" /></span>
-								<p> At Amanath Transport, we pride ourselves on being more than just a logistics company. We are a team of dedicated professionals passionate about providing top-notch transport services tailored to meet the unique needs of our clients. With a focus on reliability, safety, and efficiency, we have become a trusted name in the industry.</p>
-                                <p>Our commitment extends beyond just delivering goods; we believe in building lasting relationships. Our experienced and skilled team ensures that your shipments reach their destination on time and in pristine condition. We leverage cutting-edge technology to streamline the logistics process, offering you transparency and peace of mind.</p>
-								<p>Whether you are a small business looking to expand your reach or a large enterprise seeking optimized supply chain solutions, Amanath Transport is here to exceed your expectations. Join us on a journey where your cargo is not just a shipment but a commitment to excellence.</p>
-							</article>
-
-						<!-- Contact -->
-							<article id="contact">
-								<h2 class="major">Contact</h2>
-								<form method="post" action="#">
-									<div class="fields">
-										<div class="field half">
-											<label for="name">Name</label>
-											<input type="text" name="name" id="name" />
-										</div>
-										<div class="field half">
-											<label for="email">Email</label>
-											<input type="text" name="email" id="email" />
-										</div>
-										<div class="field">
-											<label for="message">Message</label>
-											<textarea name="message" id="message" rows="4"></textarea>
-										</div>
-									</div>
-									<ul class="actions">
-										<li><input type="submit" value="Send Message" class="primary" /></li>
-										<li><input type="reset" value="Reset" /></li>
-									</ul>
-								</form>
-								<ul class="icons">
-									<li><a href="#" class="icon brands fa-twitter"><span class="label">Twitter</span></a></li>
-									<li><a href="#" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
-									<li><a href="#" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
-									<li><a href="#" class="icon brands fa-github"><span class="label">GitHub</span></a></li>
-								</ul>
-							</article>
-
-						<!-- Elements -->
-							<article id="elements">
-								<h2 class="major">Elements</h2>
-
-								<section>
-									<h3 class="major">Text</h3>
-									<p>This is <b>bold</b> and this is <strong>strong</strong>. This is <i>italic</i> and this is <em>emphasized</em>.
-									This is <sup>superscript</sup> text and this is <sub>subscript</sub> text.
-									This is <u>underlined</u> and this is code: <code>for (;;) { ... }</code>. Finally, <a href="#">this is a link</a>.</p>
-									<hr />
-									<h2>Heading Level 2</h2>
-									<h3>Heading Level 3</h3>
-									<h4>Heading Level 4</h4>
-									<h5>Heading Level 5</h5>
-									<h6>Heading Level 6</h6>
-									<hr />
-									<h4>Blockquote</h4>
-									<blockquote>Fringilla nisl. Donec accumsan interdum nisi, quis tincidunt felis sagittis eget tempus euismod. Vestibulum ante ipsum primis in faucibus vestibulum. Blandit adipiscing eu felis iaculis volutpat ac adipiscing accumsan faucibus. Vestibulum ante ipsum primis in faucibus lorem ipsum dolor sit amet nullam adipiscing eu felis.</blockquote>
-									<h4>Preformatted</h4>
-									<pre><code>i = 0;
-
-while (!deck.isInOrder()) {
-    print 'Iteration ' + i;
-    deck.shuffle();
-    i++;
-}
-
-print 'It took ' + i + ' iterations to sort the deck.';</code></pre>
-								</section>
-
-								<section>
-									<h3 class="major">Lists</h3>
-
-									<h4>Unordered</h4>
-									<ul>
-										<li>Dolor pulvinar etiam.</li>
-										<li>Sagittis adipiscing.</li>
-										<li>Felis enim feugiat.</li>
-									</ul>
-
-									<h4>Alternate</h4>
-									<ul class="alt">
-										<li>Dolor pulvinar etiam.</li>
-										<li>Sagittis adipiscing.</li>
-										<li>Felis enim feugiat.</li>
-									</ul>
-
-									<h4>Ordered</h4>
-									<ol>
-										<li>Dolor pulvinar etiam.</li>
-										<li>Etiam vel felis viverra.</li>
-										<li>Felis enim feugiat.</li>
-										<li>Dolor pulvinar etiam.</li>
-										<li>Etiam vel felis lorem.</li>
-										<li>Felis enim et feugiat.</li>
-									</ol>
-									<h4>Icons</h4>
-									<ul class="icons">
-										<li><a href="#" class="icon brands fa-twitter"><span class="label">Twitter</span></a></li>
-										<li><a href="#" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
-										<li><a href="#" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
-										<li><a href="#" class="icon brands fa-github"><span class="label">Github</span></a></li>
-									</ul>
-
-									<h4>Actions</h4>
-									<ul class="actions">
-										<li><a href="#" class="button primary">Default</a></li>
-										<li><a href="#" class="button">Default</a></li>
-									</ul>
-									<ul class="actions stacked">
-										<li><a href="#" class="button primary">Default</a></li>
-										<li><a href="#" class="button">Default</a></li>
-									</ul>
-								</section>
-
-								<section>
-									<h3 class="major">Table</h3>
-									<h4>Default</h4>
-									<div class="table-wrapper">
-										<table>
-											<thead>
-												<tr>
-													<th>Name</th>
-													<th>Description</th>
-													<th>Price</th>
-												</tr>
-											</thead>
-											<tbody>
-												<tr>
-													<td>Item One</td>
-													<td>Ante turpis integer aliquet porttitor.</td>
-													<td>29.99</td>
-												</tr>
-												<tr>
-													<td>Item Two</td>
-													<td>Vis ac commodo adipiscing arcu aliquet.</td>
-													<td>19.99</td>
-												</tr>
-												<tr>
-													<td>Item Three</td>
-													<td> Morbi faucibus arcu accumsan lorem.</td>
-													<td>29.99</td>
-												</tr>
-												<tr>
-													<td>Item Four</td>
-													<td>Vitae integer tempus condimentum.</td>
-													<td>19.99</td>
-												</tr>
-												<tr>
-													<td>Item Five</td>
-													<td>Ante turpis integer aliquet porttitor.</td>
-													<td>29.99</td>
-												</tr>
-											</tbody>
-											<tfoot>
-												<tr>
-													<td colspan="2"></td>
-													<td>100.00</td>
-												</tr>
-											</tfoot>
-										</table>
-									</div>
-
-									<h4>Alternate</h4>
-									<div class="table-wrapper">
-										<table class="alt">
-											<thead>
-												<tr>
-													<th>Name</th>
-													<th>Description</th>
-													<th>Price</th>
-												</tr>
-											</thead>
-											<tbody>
-												<tr>
-													<td>Item One</td>
-													<td>Ante turpis integer aliquet porttitor.</td>
-													<td>29.99</td>
-												</tr>
-												<tr>
-													<td>Item Two</td>
-													<td>Vis ac commodo adipiscing arcu aliquet.</td>
-													<td>19.99</td>
-												</tr>
-												<tr>
-													<td>Item Three</td>
-													<td> Morbi faucibus arcu accumsan lorem.</td>
-													<td>29.99</td>
-												</tr>
-												<tr>
-													<td>Item Four</td>
-													<td>Vitae integer tempus condimentum.</td>
-													<td>19.99</td>
-												</tr>
-												<tr>
-													<td>Item Five</td>
-													<td>Ante turpis integer aliquet porttitor.</td>
-													<td>29.99</td>
-												</tr>
-											</tbody>
-											<tfoot>
-												<tr>
-													<td colspan="2"></td>
-													<td>100.00</td>
-												</tr>
-											</tfoot>
-										</table>
-									</div>
-								</section>
-
-								<section>
-									<h3 class="major">Buttons</h3>
-									<ul class="actions">
-										<li><a href="#" class="button primary">Primary</a></li>
-										<li><a href="#" class="button">Default</a></li>
-									</ul>
-									<ul class="actions">
-										<li><a href="#" class="button">Default</a></li>
-										<li><a href="#" class="button small">Small</a></li>
-									</ul>
-									<ul class="actions">
-										<li><a href="#" class="button primary icon solid fa-download">Icon</a></li>
-										<li><a href="#" class="button icon solid fa-download">Icon</a></li>
-									</ul>
-									<ul class="actions">
-										<li><span class="button primary disabled">Disabled</span></li>
-										<li><span class="button disabled">Disabled</span></li>
-									</ul>
-								</section>
-
-								<section>
-									<h3 class="major">Form</h3>
-									<form method="post" action="#">
-										<div class="fields">
-											<div class="field half">
-												<label for="demo-name">Name</label>
-												<input type="text" name="demo-name" id="demo-name" value="" placeholder="Jane Doe" />
-											</div>
-											<div class="field half">
-												<label for="demo-email">Email</label>
-												<input type="email" name="demo-email" id="demo-email" value="" placeholder="jane@untitled.tld" />
-											</div>
-											<div class="field">
-												<label for="demo-category">Category</label>
-												<select name="demo-category" id="demo-category">
-													<option value="">-</option>
-													<option value="1">Manufacturing</option>
-													<option value="1">Shipping</option>
-													<option value="1">Administration</option>
-													<option value="1">Human Resources</option>
-												</select>
-											</div>
-											<div class="field half">
-												<input type="radio" id="demo-priority-low" name="demo-priority" checked>
-												<label for="demo-priority-low">Low</label>
-											</div>
-											<div class="field half">
-												<input type="radio" id="demo-priority-high" name="demo-priority">
-												<label for="demo-priority-high">High</label>
-											</div>
-											<div class="field half">
-												<input type="checkbox" id="demo-copy" name="demo-copy">
-												<label for="demo-copy">Email me a copy</label>
-											</div>
-											<div class="field half">
-												<input type="checkbox" id="demo-human" name="demo-human" checked>
-												<label for="demo-human">Not a robot</label>
-											</div>
-											<div class="field">
-												<label for="demo-message">Message</label>
-												<textarea name="demo-message" id="demo-message" placeholder="Enter your message" rows="6"></textarea>
-											</div>
-										</div>
-										<ul class="actions">
-											<li><input type="submit" value="Send Message" class="primary" /></li>
-											<li><input type="reset" value="Reset" /></li>
-										</ul>
-									</form>
-								</section>
-
-							</article>
-
-					</div>
-
-				<!-- Footer -->
-					<footer id="footer">
-						
-						<p class="copyright">&copy; <a href="tel:+9035002910">click to call:+91 9035002910</a>.</p>
-						
-					</footer>
+						<ul class="actions">
+							<li><input type="submit" value="Send Message" class="primary" /></li>
+							<li><input type="reset" value="Reset" /></li>
+						</ul>
+					</form>
+					<ul class="icons">
+						<li><a href="#" class="icon brands fa-twitter"><span class="label">Twitter</span></a></li>
+						<li><a href="#" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
+						<li><a href="#" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
+						<li><a href="#" class="icon brands fa-github"><span class="label">GitHub</span></a></li>
+					</ul>
+				</article>
 
 			</div>
 
-		<!-- BG -->
-			<div id="bg"></div>
+			<!-- Footer -->
+			<footer id="footer">
+				<p class="copyright">&copy; Amanat Transport. <a href="tel:+919035002910">Click to Call: +91 9035002910</a>.</p>
+			</footer>
 
-		<!-- Scripts -->
-			<script src="assets/js/jquery.min.js"></script>
-			<script src="assets/js/browser.min.js"></script>
-			<script src="assets/js/breakpoints.min.js"></script>
-			<script src="assets/js/util.js"></script>
-			<script src="assets/js/main.js"></script>
+		</div>
 
+		<!-- Dynamic Background -->
+		<div id="bg"></div>
+
+		<!-- Embedded Scripts -->
+		<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+		<script>
+/* Breakpoints Helper */
+var breakpoints=function(){"use strict";function e(e){t.init(e)}var t={list:null,media:{},events:[],init:function(e){t.list=e,window.addEventListener("resize",t.poll),window.addEventListener("orientationchange",t.poll),window.addEventListener("load",t.poll),window.addEventListener("fullscreenchange",t.poll)},active:function(e){var n,a,s,i,r,d,c;if(!(e in t.media)){if(">="==e.substr(0,2)?(a="gte",n=e.substr(2)):"<="==e.substr(0,2)?(a="lte",n=e.substr(2)):">"==e.substr(0,1)?(a="gt",n=e.substr(1)):"<"==e.substr(0,1)?(a="lt",n=e.substr(1)):"!"==e.substr(0,1)?(a="not",n=e.substr(1)):(a="eq",n=e),n&&n in t.list)if(i=t.list[n],Array.isArray(i)){if(r=parseInt(i[0]),d=parseInt(i[1]),isNaN(r)){if(isNaN(d))return;c=i[1].substr(String(d).length)}else c=i[0].substr(String(r).length);if(isNaN(r))switch(a){case"gte":s="screen";break;case"lte":s="screen and (max-width: "+d+c+")";break;case"gt":s="screen and (min-width: "+(d+1)+c+")";break;case"lt":s="screen and (max-width: -1px)";break;case"not":s="screen and (min-width: "+(d+1)+c+")";break;default:s="screen and (max-width: "+d+c+")"}else if(isNaN(d))switch(a){case"gte":s="screen and (min-width: "+r+c+")";break;case"lte":s="screen";break;case"gt":s="screen and (max-width: -1px)";break;case"lt":s="screen and (max-width: "+(r-1)+c+")";break;case"not":s="screen and (max-width: "+(r-1)+c+")";break;default:s="screen and (min-width: "+r+c+")"}else switch(a){case"gte":s="screen and (min-width: "+r+c+")";break;case"lte":s="screen and (max-width: "+d+c+")";break;case"gt":s="screen and (min-width: "+(d+1)+c+")";break;case"lt":s="screen and (max-width: "+(r-1)+c+")";break;case"not":s="screen and (max-width: "+(r-1)+c+"), screen and (min-width: "+(d+1)+c+")";break;default:s="screen and (min-width: "+r+c+") and (max-width: "+d+c+")"}}else s="("==i.charAt(0)?"screen and "+i:i;t.media[e]=!!s&&s}return t.media[e]!==!1&&window.matchMedia(t.media[e]).matches},on:function(e,n){t.events.push({query:e,handler:n,state:!1}),t.active(e)&&n()},poll:function(){var e,n;for(e=0;e<t.events.length;e++)n=t.events[e],t.active(n.query)?n.state||(n.state=!0,n.handler()):n.state&&(n.state=!1)}};return e._=t,e.on=function(e,n){t.on(e,n)},e.active=function(e){return t.active(e)},e}();
+
+/* Browser Detector Helper */
+var browser=function(){"use strict";var t={name:null,version:null,os:null,osVersion:null,touch:null,mobile:null,_canUse:null,canUse:function(e){t._canUse||(t._canUse=document.createElement("div"));var n=t._canUse.style,r=e.charAt(0).toUpperCase()+e.slice(1);return e in n||"Moz"+r in n||"Webkit"+r in n||"O"+r in n||"ms"+r in n},init:function(){for(var e=navigator.userAgent,n="other",r=0,i=[["firefox",/Firefox\/([0-9\.]+)/],["bb",/BlackBerry.+Version\/([0-9\.]+)/],["bb",/BB[0-9]+.+Version\/([0-9\.]+)/],["opera",/OPR\/([0-9\.]+)/],["opera",/Opera\/([0-9\.]+)/],["edge",/Edge\/([0-9\.]+)/],["safari",/Version\/([0-9\.]+).+Safari/],["chrome",/Chrome\/([0-9\.]+)/],["ie",/MSIE ([0-9]+)/],["ie",/Trident\/.+rv:([0-9]+)/]],o=0;o<i.length;o++)if(e.match(i[o][1])){n=i[o][0],r=parseFloat(RegExp.$1);break}for(t.name=n,t.version=r,n="other",i=[["ios",/([0-9_]+) like Mac OS X/,function(e){return e.replace("_",".").replace("_","")}],["ios",/CPU like Mac OS X/,function(e){return 0}],["wp",/Windows Phone ([0-9\.]+)/,null],["android",/Android ([0-9\.]+)/,null],["mac",/Macintosh.+Mac OS X ([0-9_]+)/,function(e){return e.replace("_",".").replace("_","")}],["windows",/Windows NT ([0-9\.]+)/,null],["bb",/BlackBerry.+Version\/([0-9\.]+)/,null],["bb",/BB[0-9]+.+Version\/([0-9\.]+)/,null],["linux",/Linux/,null],["bsd",/BSD/,null],["unix",/X11/,null]],o=r=0;o<i.length;o++)if(e.match(i[o][1])){n=i[o][0],r=parseFloat(i[o][2]?i[o][2](RegExp.$1):RegExp.$1);break}"mac"==n&&"ontouchstart"in window&&(1024==screen.width&&1366==screen.height||834==screen.width&&1112==screen.height||810==screen.width&&1080==screen.height||768==screen.width&&1024==screen.height)&&(n="ios"),t.os=n,t.osVersion=r,t.touch="wp"==t.os?0<navigator.msMaxTouchPoints:!!("ontouchstart"in window),t.mobile="wp"==t.os||"android"==t.os||"ios"==t.os||"bb"==t.os}};return t.init(),t}();
+
+/* Main Interaction Logic */
+(function($) {
+	var $window = $(window),
+		$body = $('body'),
+		$wrapper = $('#wrapper'),
+		$header = $('#header'),
+		$footer = $('#footer'),
+		$main = $('#main'),
+		$main_articles = $main.children('article');
+
+	// Breakpoints initialization
+	breakpoints({
+		xlarge:   [ '1281px',  '1680px' ],
+		large:    [ '981px',   '1280px' ],
+		medium:   [ '737px',   '980px'  ],
+		small:    [ '481px',   '736px'  ],
+		xsmall:   [ '361px',   '480px'  ],
+		xxsmall:  [ null,      '360px'  ]
+	});
+
+	// Animations on load
+	$window.on('load', function() {
+		window.setTimeout(function() {
+			$body.removeClass('is-preload');
+		}, 100);
+	});
+
+	// Nav middle alignment
+	var $nav = $header.children('nav'),
+		$nav_li = $nav.find('li');
+
+	if ($nav_li.length % 2 == 0) {
+		$nav.addClass('use-middle');
+		$nav_li.eq( ($nav_li.length / 2) ).addClass('is-middle');
+	}
+
+	// Article Switching Logic
+	var delay = 325, locked = false;
+
+	$main._show = function(id, initial) {
+		var $article = $main_articles.filter('#' + id);
+		if ($article.length == 0) return;
+
+		if (locked || (typeof initial != 'undefined' && initial === true)) {
+			$body.addClass('is-switching');
+			$body.addClass('is-article-visible');
+			$main_articles.removeClass('active');
+			$header.hide();
+			$footer.hide();
+			$main.show();
+			$article.show();
+			$article.addClass('active');
+			locked = false;
+			setTimeout(function() {
+				$body.removeClass('is-switching');
+			}, (initial ? 1000 : 0));
+			return;
+		}
+
+		locked = true;
+
+		if ($body.hasClass('is-article-visible')) {
+			var $currentArticle = $main_articles.filter('.active');
+			$currentArticle.removeClass('active');
+			setTimeout(function() {
+				$currentArticle.hide();
+				$article.show();
+				setTimeout(function() {
+					$article.addClass('active');
+					$window.scrollTop(0);
+					setTimeout(function() { locked = false; }, delay);
+				}, 25);
+			}, delay);
+		} else {
+			$body.addClass('is-article-visible');
+			setTimeout(function() {
+				$header.hide();
+				$footer.hide();
+				$main.show();
+				$article.show();
+				setTimeout(function() {
+					$article.addClass('active');
+					$window.scrollTop(0);
+					setTimeout(function() { locked = false; }, delay);
+				}, 25);
+			}, delay);
+		}
+	};
+
+	$main._hide = function(addState) {
+		var $article = $main_articles.filter('.active');
+		if (!$body.hasClass('is-article-visible')) return;
+
+		if (typeof addState != 'undefined' && addState === true) {
+			history.pushState(null, null, '#');
+		}
+
+		if (locked) {
+			$body.addClass('is-switching');
+			$article.removeClass('active');
+			$article.hide();
+			$main.hide();
+			$footer.show();
+			$header.show();
+			$body.removeClass('is-article-visible');
+			locked = false;
+			$body.removeClass('is-switching');
+			$window.scrollTop(0);
+			return;
+		}
+
+		locked = true;
+		$article.removeClass('active');
+
+		setTimeout(function() {
+			$article.hide();
+			$main.hide();
+			$footer.show();
+			$header.show();
+			setTimeout(function() {
+				$body.removeClass('is-article-visible');
+				$window.scrollTop(0);
+				setTimeout(function() { locked = false; }, delay);
+			}, 25);
+		}, delay);
+	};
+
+	// Close buttons for articles
+	$main_articles.each(function() {
+		var $this = $(this);
+		$('<div class="close">Close</div>')
+			.appendTo($this)
+			.on('click', function() {
+				location.hash = '';
+			});
+		$this.on('click', function(event) {
+			event.stopPropagation();
+		});
+	});
+
+	// Global events
+	$body.on('click', function(event) {
+		if ($body.hasClass('is-article-visible')) {
+			$main._hide(true);
+		}
+	});
+
+	$window.on('keyup', function(event) {
+		if (event.keyCode == 27 && $body.hasClass('is-article-visible')) {
+			$main._hide(true);
+		}
+	});
+
+	$window.on('hashchange', function(event) {
+		if (location.hash == '' || location.hash == '#') {
+			event.preventDefault();
+			event.stopPropagation();
+			$main._hide();
+		} else if ($main_articles.filter(location.hash).length > 0) {
+			event.preventDefault();
+			event.stopPropagation();
+			$main._show(location.hash.substr(1));
+		}
+	});
+
+	if ('scrollRestoration' in history) {
+		history.scrollRestoration = 'manual';
+	}
+
+	// Initial page state
+	$main.hide();
+	$main_articles.hide();
+
+	if (location.hash != '' && location.hash != '#') {
+		$window.on('load', function() {
+			$main._show(location.hash.substr(1), true);
+		});
+	}
+})(jQuery);
+		</script>
 	</body>
 </html>
