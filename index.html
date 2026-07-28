@@ -1,1256 +1,1438 @@
-<!DOCTYPE HTML>
-<!--
-	Amanat Transport - Single-File Web Application
-	Logistics & Fleet Business Landing Page
--->
-<html>
-	<head>
-		<title>Amanat Transport</title>
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-		<link rel="preconnect" href="https://fonts.googleapis.com">
-		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-		<link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:ital,wght@0,300;0,600;1,300;1,600&display=swap" rel="stylesheet">
-		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
-
-		<style>
-/* Reset & Core Styles */
-html, body, div, span, applet, object,
-iframe, h1, h2, h3, h4, h5, h6, p, blockquote,
-pre, a, abbr, acronym, address, big, cite,
-code, del, dfn, em, img, ins, kbd, q, s, samp,
-small, strike, strong, sub, sup, tt, var, b,
-u, i, center, dl, dt, dd, ol, ul, li, fieldset,
-form, label, legend, table, caption, tbody,
-tfoot, thead, tr, th, td, article, aside,
-canvas, details, embed, figure, figcaption,
-footer, header, hgroup, menu, nav, output, ruby,
-section, summary, time, mark, audio, video {
-	margin: 0;
-	padding: 0;
-	border: 0;
-	font-size: 100%;
-	font: inherit;
-	vertical-align: baseline;
-}
-
-article, aside, details, figcaption, figure,
-footer, header, hgroup, menu, nav, section {
-	display: block;
-}
-
-body {
-	line-height: 1;
-	-webkit-text-size-adjust: none;
-	background: #1b1f22;
-	color: #ffffff;
-	font-family: "Source Sans Pro", sans-serif;
-	font-weight: 300;
-	font-size: 1rem;
-	line-height: 1.65;
-}
-
-ol, ul {
-	list-style: none;
-}
-
-blockquote, q {
-	quotes: none;
-}
-
-blockquote:before, blockquote:after, q:before, q:after {
-	content: '';
-	content: none;
-}
-
-table {
-	border-collapse: collapse;
-	border-spacing: 0;
-}
-
-mark {
-	background-color: transparent;
-	color: inherit;
-}
-
-input::-moz-focus-inner {
-	border: 0;
-	padding: 0;
-}
-
-input, select, textarea {
-	-moz-appearance: none;
-	-webkit-appearance: none;
-	-ms-appearance: none;
-	appearance: none;
-}
-
-@-ms-viewport {
-	width: device-width;
-}
-
-@media screen and (max-width: 480px) {
-	html, body {
-		min-width: 320px;
-	}
-}
-
-html {
-	box-sizing: border-box;
-	font-size: 16pt;
-}
-
-*, *:before, *:after {
-	box-sizing: inherit;
-}
-
-body.is-preload *, body.is-preload *:before, body.is-preload *:after {
-	-moz-animation: none !important;
-	-webkit-animation: none !important;
-	-ms-animation: none !important;
-	animation: none !important;
-	-moz-transition: none !important;
-	-webkit-transition: none !important;
-	-ms-transition: none !important;
-	transition: none !important;
-}
-
-@media screen and (max-width: 1680px) {
-	html { font-size: 12pt; }
-}
-
-@media screen and (max-width: 736px) {
-	html { font-size: 11pt; }
-}
-
-@media screen and (max-width: 360px) {
-	html { font-size: 10pt; }
-}
-
-a {
-	-moz-transition: color 0.2s ease-in-out, background-color 0.2s ease-in-out, border-bottom-color 0.2s ease-in-out;
-	-webkit-transition: color 0.2s ease-in-out, background-color 0.2s ease-in-out, border-bottom-color 0.2s ease-in-out;
-	-ms-transition: color 0.2s ease-in-out, background-color 0.2s ease-in-out, border-bottom-color 0.2s ease-in-out;
-	transition: color 0.2s ease-in-out, background-color 0.2s ease-in-out, border-bottom-color 0.2s ease-in-out;
-	border-bottom: dotted 1px rgba(255, 255, 255, 0.5);
-	text-decoration: none;
-	color: inherit;
-}
-
-a:hover {
-	border-bottom-color: transparent;
-}
-
-strong, b {
-	color: #ffffff;
-	font-weight: 600;
-}
-
-em, i {
-	font-style: italic;
-}
-
-p {
-	margin: 0 0 1.5rem 0;
-}
-
-h1, h2, h3, h4, h5, h6 {
-	color: #ffffff;
-	font-weight: 600;
-	line-height: 1.5;
-	margin: 0 0 1rem 0;
-	text-transform: uppercase;
-	letter-spacing: 0.2rem;
-}
-
-h1 a, h2 a, h3 a, h4 a, h5 a, h6 a {
-	color: inherit;
-	text-decoration: none;
-}
-
-h1.major, h2.major, h3.major, h4.major, h5.major, h6.major {
-	border-bottom: solid 1px #ffffff;
-	width: -moz-max-content;
-	width: -webkit-max-content;
-	width: -ms-max-content;
-	width: max-content;
-	padding-bottom: 0.5rem;
-	margin: 0 0 2rem 0;
-}
-
-h1 {
-	font-size: 2.25rem;
-	line-height: 1.3;
-	letter-spacing: 0.5rem;
-}
-
-h2 {
-	font-size: 1.5rem;
-	line-height: 1.4;
-	letter-spacing: 0.5rem;
-}
-
-h3 { font-size: 1rem; }
-h4 { font-size: 0.8rem; }
-h5 { font-size: 0.7rem; }
-h6 { font-size: 0.6rem; }
-
-@media screen and (max-width: 736px) {
-	h1 {
-		font-size: 1.75rem;
-		line-height: 1.4;
-	}
-	h2 {
-		font-size: 1.25em;
-		line-height: 1.5;
-	}
-}
-
-/* Form Elements */
-form {
-	margin: 0 0 2rem 0;
-}
-
-form > :last-child {
-	margin-bottom: 0;
-}
-
-form > .fields {
-	display: -moz-flex;
-	display: -webkit-flex;
-	display: -ms-flex;
-	display: flex;
-	-moz-flex-wrap: wrap;
-	-webkit-flex-wrap: wrap;
-	-ms-flex-wrap: wrap;
-	flex-wrap: wrap;
-	width: calc(100% + 3rem);
-	margin: -1.5rem 0 2rem -1.5rem;
-}
-
-form > .fields > .field {
-	-moz-flex-grow: 0;
-	-webkit-flex-grow: 0;
-	-ms-flex-grow: 0;
-	flex-grow: 0;
-	-moz-flex-shrink: 0;
-	-webkit-flex-shrink: 0;
-	-ms-flex-shrink: 0;
-	flex-shrink: 0;
-	padding: 1.5rem 0 0 1.5rem;
-	width: calc(100% - 1.5rem);
-}
-
-form > .fields > .field.half {
-	width: calc(50% - 0.75rem);
-}
-
-@media screen and (max-width: 480px) {
-	form > .fields {
-		width: calc(100% + 3rem);
-		margin: -1.5rem 0 2rem -1.5rem;
-	}
-	form > .fields > .field {
-		padding: 1.5rem 0 0 1.5rem;
-		width: calc(100% - 1.5rem);
-	}
-	form > .fields > .field.half {
-		width: calc(100% - 1.5rem);
-	}
-}
-
-label {
-	color: #ffffff;
-	display: block;
-	font-size: 0.8rem;
-	font-weight: 300;
-	letter-spacing: 0.2rem;
-	line-height: 1.5;
-	margin: 0 0 1rem 0;
-	text-transform: uppercase;
-}
-
-input[type="text"],
-input[type="email"],
-textarea {
-	-moz-appearance: none;
-	-webkit-appearance: none;
-	-ms-appearance: none;
-	appearance: none;
-	-moz-transition: border-color 0.2s ease-in-out, box-shadow 0.2s ease-in-out, background-color 0.2s ease-in-out;
-	-webkit-transition: border-color 0.2s ease-in-out, box-shadow 0.2s ease-in-out, background-color 0.2s ease-in-out;
-	-ms-transition: border-color 0.2s ease-in-out, box-shadow 0.2s ease-in-out, background-color 0.2s ease-in-out;
-	transition: border-color 0.2s ease-in-out, box-shadow 0.2s ease-in-out, background-color 0.2s ease-in-out;
-	background-color: transparent;
-	border-radius: 4px;
-	border: solid 1px #ffffff;
-	color: inherit;
-	display: block;
-	outline: 0;
-	padding: 0 1rem;
-	text-decoration: none;
-	width: 100%;
-}
-
-input[type="text"]:focus,
-input[type="email"]:focus,
-textarea:focus {
-	background: rgba(255, 255, 255, 0.075);
-	border-color: #ffffff;
-	box-shadow: 0 0 0 1px #ffffff;
-}
-
-input[type="text"],
-input[type="email"] {
-	height: 2.75rem;
-}
-
-textarea {
-	padding: 0.75rem 1rem;
-}
-
-/* Icon & Media */
-.icon {
-	text-decoration: none;
-	border-bottom: none;
-	position: relative;
-}
-
-.icon > .label {
-	display: none;
-}
-
-.image {
-	border-radius: 4px;
-	border: 0;
-	display: inline-block;
-	position: relative;
-}
-
-.image:before {
-	pointer-events: none;
-	background-image: url("images/overlay.png");
-	background-color: rgba(19, 21, 25, 0.5);
-	border-radius: 4px;
-	content: '';
-	display: block;
-	height: 100%;
-	left: 0;
-	opacity: 0.5;
-	position: absolute;
-	top: 0;
-	width: 100%;
-}
-
-.image img {
-	border-radius: 4px;
-	display: block;
-}
-
-.image.main {
-	display: block;
-	margin: 2.5rem 0;
-	width: 100%;
-}
-
-.image.main img {
-	width: 100%;
-}
-
-@media screen and (max-width: 736px) {
-	.image.main { margin: 2rem 0; }
-}
-
-@media screen and (max-width: 480px) {
-	.image.main { margin: 1.5rem 0; }
-}
-
-/* Actions & Buttons */
-ul.actions {
-	display: -moz-flex;
-	display: -webkit-flex;
-	display: -ms-flex;
-	display: flex;
-	cursor: default;
-	list-style: none;
-	margin-left: -1rem;
-	padding-left: 0;
-}
-
-ul.actions li {
-	padding: 0 0 0 1rem;
-	vertical-align: middle;
-}
-
-@media screen and (max-width: 480px) {
-	ul.actions:not(.fixed) {
-		-moz-flex-direction: column;
-		-webkit-flex-direction: column;
-		-ms-flex-direction: column;
-		flex-direction: column;
-		margin-left: 0;
-		width: 100% !important;
-	}
-	ul.actions:not(.fixed) li {
-		padding: 1rem 0 0 0;
-		text-align: center;
-		width: 100%;
-	}
-	ul.actions:not(.fixed) li:first-child {
-		padding-top: 0;
-	}
-}
-
-ul.icons {
-	cursor: default;
-	list-style: none;
-	padding-left: 0;
-}
-
-ul.icons li {
-	display: inline-block;
-	padding: 0 0.75em 0 0;
-}
-
-ul.icons li:last-child {
-	padding-right: 0;
-}
-
-ul.icons li a {
-	border-radius: 100%;
-	box-shadow: inset 0 0 0 1px #ffffff;
-	display: inline-block;
-	height: 2.25rem;
-	line-height: 2.25rem;
-	text-align: center;
-	width: 2.25rem;
-}
-
-ul.icons li a:hover {
-	background-color: rgba(255, 255, 255, 0.075);
-}
-
-ul.icons li a:active {
-	background-color: rgba(255, 255, 255, 0.175);
-}
-
-input[type="submit"],
-input[type="reset"],
-input[type="button"],
-button,
-.button {
-	-moz-appearance: none;
-	-webkit-appearance: none;
-	-ms-appearance: none;
-	appearance: none;
-	-moz-transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
-	-webkit-transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
-	-ms-transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
-	transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
-	background-color: transparent;
-	border-radius: 4px;
-	border: 0;
-	box-shadow: inset 0 0 0 1px #ffffff;
-	color: #ffffff !important;
-	cursor: pointer;
-	display: inline-block;
-	font-size: 0.8rem;
-	font-weight: 300;
-	height: 2.75rem;
-	letter-spacing: 0.2rem;
-	line-height: 2.75rem;
-	outline: 0;
-	padding: 0 1.25rem 0 1.35rem;
-	text-align: center;
-	text-decoration: none;
-	text-transform: uppercase;
-	white-space: nowrap;
-}
-
-input[type="submit"]:hover,
-input[type="reset"]:hover,
-.button:hover {
-	background-color: rgba(255, 255, 255, 0.075);
-}
-
-input[type="submit"].primary,
-.button.primary {
-	background-color: #ffffff;
-	color: #1b1f22 !important;
-	font-weight: 600;
-}
-
-/* Background Effect */
-#bg {
-	-moz-transform: scale(1.0);
-	-webkit-transform: scale(1.0);
-	-ms-transform: scale(1.0);
-	transform: scale(1.0);
-	-webkit-backface-visibility: hidden;
-	position: fixed;
-	top: 0;
-	left: 0;
-	width: 100%;
-	height: 100vh;
-	z-index: 1;
-}
-
-#bg:before, #bg:after {
-	content: '';
-	display: block;
-	position: absolute;
-	top: 0;
-	left: 0;
-	width: 100%;
-	height: 100%;
-}
-
-#bg:before {
-	-moz-transition: background-color 2.5s ease-in-out;
-	-webkit-transition: background-color 2.5s ease-in-out;
-	-ms-transition: background-color 2.5s ease-in-out;
-	transition: background-color 2.5s ease-in-out;
-	-moz-transition-delay: 0.75s;
-	-webkit-transition-delay: 0.75s;
-	-ms-transition-delay: 0.75s;
-	transition-delay: 0.75s;
-	background-image: linear-gradient(to top, rgba(19, 21, 25, 0.5), rgba(19, 21, 25, 0.5)), url("images/overlay.png");
-	background-size: auto, 256px 256px;
-	background-position: center, center;
-	background-repeat: no-repeat, repeat;
-	z-index: 2;
-}
-
-#bg:after {
-	-moz-transform: scale(1.125);
-	-webkit-transform: scale(1.125);
-	-ms-transform: scale(1.125);
-	transform: scale(1.125);
-	-moz-transition: -moz-transform 0.325s ease-in-out, -moz-filter 0.325s ease-in-out;
-	-webkit-transition: -webkit-transform 0.325s ease-in-out, -webkit-filter 0.325s ease-in-out;
-	-ms-transition: -ms-transform 0.325s ease-in-out, -ms-filter 0.325s ease-in-out;
-	transition: transform 0.325s ease-in-out, filter 0.325s ease-in-out;
-	background-image: url("images/bg.jpg");
-	background-position: center;
-	background-size: cover;
-	background-repeat: no-repeat;
-	z-index: 1;
-}
-
-body.is-article-visible #bg:after {
-	-moz-transform: scale(1.0825);
-	-webkit-transform: scale(1.0825);
-	-ms-transform: scale(1.0825);
-	transform: scale(1.0825);
-	-moz-filter: blur(0.2rem);
-	-webkit-filter: blur(0.2rem);
-	-ms-filter: blur(0.2rem);
-	filter: blur(0.2rem);
-}
-
-body.is-preload #bg:before {
-	background-color: #000000;
-}
-
-/* Wrapper Layout */
-#wrapper {
-	display: -moz-flex;
-	display: -webkit-flex;
-	display: -ms-flex;
-	display: flex;
-	-moz-flex-direction: column;
-	-webkit-flex-direction: column;
-	-ms-flex-direction: column;
-	flex-direction: column;
-	-moz-align-items: center;
-	-webkit-align-items: center;
-	-ms-align-items: center;
-	align-items: center;
-	-moz-justify-content: space-between;
-	-webkit-justify-content: space-between;
-	-ms-justify-content: space-between;
-	justify-content: space-between;
-	position: relative;
-	min-height: 100vh;
-	width: 100%;
-	padding: 4rem 2rem;
-	z-index: 3;
-}
-
-#wrapper:before {
-	content: '';
-	display: block;
-}
-
-@media screen and (max-width: 1680px) {
-	#wrapper { padding: 3rem 2rem; }
-}
-
-@media screen and (max-width: 736px) {
-	#wrapper { padding: 2rem 1rem; }
-}
-
-@media screen and (max-width: 480px) {
-	#wrapper { padding: 1rem; }
-}
-
-/* Header */
-#header {
-	display: -moz-flex;
-	display: -webkit-flex;
-	display: -ms-flex;
-	display: flex;
-	-moz-flex-direction: column;
-	-webkit-flex-direction: column;
-	-ms-flex-direction: column;
-	flex-direction: column;
-	-moz-align-items: center;
-	-webkit-align-items: center;
-	-ms-align-items: center;
-	align-items: center;
-	-moz-transition: -moz-transform 0.325s ease-in-out, -moz-filter 0.325s ease-in-out, opacity 0.325s ease-in-out;
-	-webkit-transition: -webkit-transform 0.325s ease-in-out, -webkit-filter 0.325s ease-in-out, opacity 0.325s ease-in-out;
-	-ms-transition: -ms-transform 0.325s ease-in-out, -ms-filter 0.325s ease-in-out, opacity 0.325s ease-in-out;
-	transition: transform 0.325s ease-in-out, filter 0.325s ease-in-out, opacity 0.325s ease-in-out;
-	background-image: radial-gradient(rgba(0, 0, 0, 0.25) 25%, rgba(0, 0, 0, 0) 55%);
-	max-width: 100%;
-	text-align: center;
-}
-
-#header > * {
-	-moz-transition: opacity 0.325s ease-in-out;
-	-webkit-transition: opacity 0.325s ease-in-out;
-	-ms-transition: opacity 0.325s ease-in-out;
-	transition: opacity 0.325s ease-in-out;
-	position: relative;
-	margin-top: 3.5rem;
-}
-
-#header > *:before {
-	content: '';
-	display: block;
-	position: absolute;
-	top: calc(-3.5rem - 1px);
-	left: calc(50% - 1px);
-	width: 1px;
-	height: calc(3.5rem + 1px);
-	background: #ffffff;
-}
-
-#header > :first-child {
-	margin-top: 0;
-}
-
-#header > :first-child:before {
-	display: none;
-}
-
-#header .logo {
-	width: 5.5rem;
-	height: 5.5rem;
-	line-height: 5.5rem;
-	border: solid 1px #ffffff;
-	border-radius: 100%;
-}
-
-#header .logo .icon:before {
-	font-size: 2rem;
-}
-
-#header .content {
-	border-style: solid;
-	border-color: #ffffff;
-	border-top-width: 1px;
-	border-bottom-width: 1px;
-	max-width: 100%;
-}
-
-#header .content .inner {
-	-moz-transition: max-height 0.75s ease, padding 0.75s ease, opacity 0.325s ease-in-out;
-	-webkit-transition: max-height 0.75s ease, padding 0.75s ease, opacity 0.325s ease-in-out;
-	-ms-transition: max-height 0.75s ease, padding 0.75s ease, opacity 0.325s ease-in-out;
-	transition: max-height 0.75s ease, padding 0.75s ease, opacity 0.325s ease-in-out;
-	-moz-transition-delay: 0.25s;
-	-webkit-transition-delay: 0.25s;
-	-ms-transition-delay: 0.25s;
-	transition-delay: 0.25s;
-	padding: 3rem 2rem;
-	max-height: 40rem;
-	overflow: hidden;
-}
-
-#header .content p {
-	text-transform: uppercase;
-	letter-spacing: 0.2rem;
-	font-size: 0.8rem;
-	line-height: 2;
-	margin-bottom: 0.5rem;
-}
-
-#header nav ul {
-	display: -moz-flex;
-	display: -webkit-flex;
-	display: -ms-flex;
-	display: flex;
-	margin-bottom: 0;
-	list-style: none;
-	padding-left: 0;
-	border: solid 1px #ffffff;
-	border-radius: 4px;
-}
-
-#header nav ul li {
-	padding-left: 0;
-	border-left: solid 1px #ffffff;
-}
-
-#header nav ul li:first-child {
-	border-left: 0;
-}
-
-#header nav ul li a {
-	display: block;
-	min-width: 7.5rem;
-	height: 2.75rem;
-	line-height: 2.75rem;
-	padding: 0 1.25rem 0 1.45rem;
-	text-transform: uppercase;
-	letter-spacing: 0.2rem;
-	font-size: 0.8rem;
-	border-bottom: 0;
-}
-
-#header nav ul li a:hover {
-	background-color: rgba(255, 255, 255, 0.075);
-}
-
-#header nav.use-middle:after {
-	content: '';
-	display: block;
-	position: absolute;
-	top: 0;
-	left: calc(50% - 1px);
-	width: 1px;
-	height: 100%;
-	background: #ffffff;
-}
-
-#header nav.use-middle ul li.is-middle {
-	border-left: 0;
-}
-
-body.is-article-visible #header {
-	-moz-transform: scale(0.95);
-	-webkit-transform: scale(0.95);
-	-ms-transform: scale(0.95);
-	transform: scale(0.95);
-	-moz-filter: blur(0.1rem);
-	-webkit-filter: blur(0.1rem);
-	-ms-filter: blur(0.1rem);
-	filter: blur(0.1rem);
-	opacity: 0;
-}
-
-body.is-preload #header {
-	-moz-filter: blur(0.125rem);
-	-webkit-filter: blur(0.125rem);
-	-ms-filter: blur(0.125rem);
-	filter: blur(0.125rem);
-}
-
-body.is-preload #header > * {
-	opacity: 0;
-}
-
-body.is-preload #header .content .inner {
-	max-height: 0;
-	padding-top: 0;
-	padding-bottom: 0;
-	opacity: 0;
-}
-
-@media screen and (max-width: 736px) {
-	#header > * { margin-top: 2rem; }
-	#header > *:before {
-		top: calc(-2rem - 1px);
-		height: calc(2rem + 1px);
-	}
-	#header .logo {
-		width: 4.75rem;
-		height: 4.75rem;
-		line-height: 4.75rem;
-	}
-	#header .logo .icon:before { font-size: 1.75rem; }
-	#header .content .inner { padding: 2.5rem 1rem; }
-}
-
-@media screen and (max-width: 480px) {
-	#header { padding: 1.5rem 0; }
-	#header .content .inner { padding: 2.5rem 0; }
-	#header nav ul {
-		-moz-flex-direction: column;
-		-webkit-flex-direction: column;
-		-ms-flex-direction: column;
-		flex-direction: column;
-		min-width: 10rem;
-		max-width: 100%;
-	}
-	#header nav ul li {
-		border-left: 0;
-		border-top: solid 1px #ffffff;
-	}
-	#header nav ul li:first-child { border-top: 0; }
-	#header nav ul li a {
-		height: 3rem;
-		line-height: 3rem;
-		min-width: 0;
-		width: 100%;
-	}
-	#header nav.use-middle:after { display: none; }
-}
-
-/* Main Articles */
-#main {
-	-moz-flex-grow: 1;
-	-webkit-flex-grow: 1;
-	-ms-flex-grow: 1;
-	flex-grow: 1;
-	-moz-flex-shrink: 1;
-	-webkit-flex-shrink: 1;
-	-ms-flex-shrink: 1;
-	flex-shrink: 1;
-	display: -moz-flex;
-	display: -webkit-flex;
-	display: -ms-flex;
-	display: flex;
-	-moz-align-items: center;
-	-webkit-align-items: center;
-	-ms-align-items: center;
-	align-items: center;
-	-moz-justify-content: center;
-	-webkit-justify-content: center;
-	-ms-justify-content: center;
-	justify-content: center;
-	-moz-flex-direction: column;
-	-webkit-flex-direction: column;
-	-ms-flex-direction: column;
-	flex-direction: column;
-	position: relative;
-	max-width: 100%;
-	z-index: 3;
-}
-
-#main article {
-	-moz-transform: translateY(0.25rem);
-	-webkit-transform: translateY(0.25rem);
-	-ms-transform: translateY(0.25rem);
-	transform: translateY(0.25rem);
-	-moz-transition: opacity 0.325s ease-in-out, -moz-transform 0.325s ease-in-out;
-	-webkit-transition: opacity 0.325s ease-in-out, -webkit-transform 0.325s ease-in-out;
-	-ms-transition: opacity 0.325s ease-in-out, -ms-transform 0.325s ease-in-out;
-	transition: opacity 0.325s ease-in-out, transform 0.325s ease-in-out;
-	padding: 4.5rem 2.5rem 1.5rem 2.5rem;
-	position: relative;
-	width: 40rem;
-	max-width: 100%;
-	background-color: rgba(27, 31, 34, 0.85);
-	border-radius: 4px;
-	opacity: 0;
-}
-
-#main article.active {
-	-moz-transform: translateY(0);
-	-webkit-transform: translateY(0);
-	-ms-transform: translateY(0);
-	transform: translateY(0);
-	opacity: 1;
-}
-
-#main article .close {
-	display: block;
-	position: absolute;
-	top: 0;
-	right: 0;
-	width: 4rem;
-	height: 4rem;
-	cursor: pointer;
-	text-indent: 4rem;
-	overflow: hidden;
-	white-space: nowrap;
-}
-
-#main article .close:before {
-	-moz-transition: background-color 0.2s ease-in-out;
-	-webkit-transition: background-color 0.2s ease-in-out;
-	-ms-transition: background-color 0.2s ease-in-out;
-	transition: background-color 0.2s ease-in-out;
-	content: '';
-	display: block;
-	position: absolute;
-	top: 0.75rem;
-	left: 0.75rem;
-	width: 2.5rem;
-	height: 2.5rem;
-	border-radius: 100%;
-	background-position: center;
-	background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' width='20px' height='20px' viewBox='0 0 20 20' zoomAndPan='disable'%3E%3Cstyle%3Eline %7B stroke: %23ffffff%3B stroke-width: 1%3B %7D%3C/style%3E%3Cline x1='2' y1='2' x2='18' y2='18' /%3E%3Cline x1='18' y1='2' x2='2' y2='18' /%3E%3C/svg%3E");
-	background-size: 20px 20px;
-	background-repeat: no-repeat;
-}
-
-#main article .close:hover:before {
-	background-color: rgba(255, 255, 255, 0.075);
-}
-
-@media screen and (max-width: 736px) {
-	#main article {
-		padding: 3.5rem 2rem 0.5rem 2rem;
-	}
-	#main article .close:before {
-		top: 0.875rem;
-		left: 0.875rem;
-		width: 2.25rem;
-		height: 2.25rem;
-		background-size: 14px 14px;
-	}
-}
-
-@media screen and (max-width: 480px) {
-	#main article {
-		padding: 3rem 1.5rem 0.5rem 1.5rem;
-	}
-}
-
-/* Footer */
-#footer {
-	-moz-transition: -moz-transform 0.325s ease-in-out, -moz-filter 0.325s ease-in-out, opacity 0.325s ease-in-out;
-	-webkit-transition: -webkit-transform 0.325s ease-in-out, -webkit-filter 0.325s ease-in-out, opacity 0.325s ease-in-out;
-	-ms-transition: -ms-transform 0.325s ease-in-out, -ms-filter 0.325s ease-in-out, opacity 0.325s ease-in-out;
-	transition: transform 0.325s ease-in-out, filter 0.325s ease-in-out, opacity 0.325s ease-in-out;
-	width: 100%;
-	max-width: 100%;
-	margin-top: 2rem;
-	text-align: center;
-}
-
-#footer .copyright {
-	letter-spacing: 0.2rem;
-	font-size: 0.6rem;
-	opacity: 0.75;
-	margin-bottom: 0;
-	text-transform: uppercase;
-}
-
-body.is-article-visible #footer {
-	-moz-transform: scale(0.95);
-	-webkit-transform: scale(0.95);
-	-ms-transform: scale(0.95);
-	transform: scale(0.95);
-	-moz-filter: blur(0.1rem);
-	-webkit-filter: blur(0.1rem);
-	-ms-filter: blur(0.1rem);
-	filter: blur(0.1rem);
-	opacity: 0;
-}
-
-body.is-preload #footer {
-	opacity: 0;
-}
-
-/* Noscript Fallbacks */
-body.is-preload #bg:before { background-color: transparent; }
-body.is-preload #header { filter: none; }
-body.is-preload #header > * { opacity: 1; }
-body.is-preload #header .content .inner { max-height: none; padding: 3rem 2rem; opacity: 1; }
-		</style>
-	</head>
-	<body class="is-preload">
-
-		<!-- Wrapper -->
-		<div id="wrapper">
-
-			<!-- Header -->
-			<header id="header">
-				<div class="logo">
-					<i class="fas fa-truck"></i>
-				</div>
-				<div class="content">
-					<div class="inner">
-						<h1>AMANAT transport</h1>
-						<p>Welcome to Amanat Transport, where reliability meets efficiency in the world of logistics. We specialize in seamless transportation solutions, ensuring businesses connect with their customers with speed and security.</p>
-						<p><em>Because your success is our destination</em></p>
-					</div>
-				</div>
-				<nav>
-					<ul>
-						<li><a href="#intro">Intro</a></li>
-						<li><a href="#work">Work</a></li>
-						<li><a href="#about">About</a></li>
-						<li><a href="#contact">Contact</a></li>
-						<li><a href="https://g.co/kgs/gUo8CB" target="_blank" rel="noopener">Location</a></li>
-					</ul>
-				</nav>
-			</header>
-
-			<!-- Main Content Articles -->
-			<div id="main">
-
-				<!-- Intro -->
-				<article id="intro">
-					<h2 class="major">Intro</h2>
-					<span class="image main"><img src="images/pic01.jpg" alt="Amanat Transport Fleet" /></span>
-					<p>Welcome to Amanat Transport, your reliable partner in logistics. We specialize in seamlessly connecting businesses with their customers through efficient and secure transportation solutions. At Amanat, we understand that timely and safe delivery is crucial in today's fast-paced world, and we are here to make that happen for you.</p>
-					<p>Understanding the pivotal role that transportation plays in the success of businesses, we've curated a service that transcends the conventional. Amanat is not merely a logistics company; it's a facilitator of growth, a guardian of deadlines, and a proponent of unparalleled service. Navigating the intricacies of the modern marketplace, we stand as your steadfast partner, ready to transform challenges into opportunities. In the fast-paced world we inhabit, rest assured that Amanat Transport is here not just to meet but to exceed your expectations, making the intricate journey of supply chains as seamless as possible.</p>
-				</article>
-
-				<!-- Work -->
-				<article id="work">
-					<h2 class="major">Work</h2>
-					<span class="image main"><img src="images/pic02.jpg" alt="Amanat Transport Operations" /></span>
-					<p>At Amanat Transport, we pride ourselves on the artistry of logistics. Our work is a finely tuned symphony of precision and dedication, where every note is a commitment to excellence. From the initiation of your shipment to its final destination, our skilled professionals take the reins, meticulously planning and executing each stage of the transportation process. We understand that in the intricate dance of supply chains, timing is paramount. Therefore, our team deploys cutting-edge technology and industry-best practices to optimize routes, monitor shipments in real-time, and proactively address any challenges that may arise.</p>
-					<p>Our work extends beyond the logistical intricacies; it's a choreography of reliability and timeliness. Amanat Transport is not just a service; it's a promise. Whether you are a startup navigating the complexities of the market or an established enterprise seeking efficiency, our tailored solutions elevate your logistical experience. With a steadfast focus on customer satisfaction, we deliver not just products but peace of mind. Our work is a fusion of expertise and passion, ensuring that each shipment, regardless of its size or destination, receives the meticulous attention it deserves. Partner with Amanat Transport, where our work speaks volumes about our commitment to making your logistics journey as smooth as possible.</p>
-				</article>
-
-				<!-- About -->
-				<article id="about">
-					<h2 class="major">About</h2>
-					<span class="image main"><img src="images/pic03.jpg" alt="About Amanat Transport" /></span>
-					<p>At Amanat Transport, we pride ourselves on being more than just a logistics company. We are a team of dedicated professionals passionate about providing top-notch transport services tailored to meet the unique needs of our clients. With a focus on reliability, safety, and efficiency, we have become a trusted name in the industry.</p>
-					<p>Our commitment extends beyond just delivering goods; we believe in building lasting relationships. Our experienced and skilled team ensures that your shipments reach their destination on time and in pristine condition. We leverage cutting-edge technology to streamline the logistics process, offering you transparency and peace of mind.</p>
-					<p>Whether you are a small business looking to expand your reach or a large enterprise seeking optimized supply chain solutions, Amanat Transport is here to exceed your expectations. Join us on a journey where your cargo is not just a shipment but a commitment to excellence.</p>
-				</article>
-
-				<!-- Contact -->
-				<article id="contact">
-					<h2 class="major">Contact</h2>
-					<form method="post" action="#">
-						<div class="fields">
-							<div class="field half">
-								<label for="name">Name</label>
-								<input type="text" name="name" id="name" required />
-							</div>
-							<div class="field half">
-								<label for="email">Email</label>
-								<input type="email" name="email" id="email" required />
-							</div>
-							<div class="field">
-								<label for="message">Message</label>
-								<textarea name="message" id="message" rows="4" required></textarea>
-							</div>
-						</div>
-						<ul class="actions">
-							<li><input type="submit" value="Send Message" class="primary" /></li>
-							<li><input type="reset" value="Reset" /></li>
-						</ul>
-					</form>
-					<ul class="icons">
-						<li><a href="#" class="icon brands fa-twitter"><span class="label">Twitter</span></a></li>
-						<li><a href="#" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
-						<li><a href="#" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
-						<li><a href="#" class="icon brands fa-github"><span class="label">GitHub</span></a></li>
-					</ul>
-				</article>
-
-			</div>
-
-			<!-- Footer -->
-			<footer id="footer">
-				<p class="copyright">&copy; Amanat Transport. <a href="tel:+919035002910">Click to Call: +91 9035002910</a>.</p>
-			</footer>
-
-		</div>
-
-		<!-- Dynamic Background -->
-		<div id="bg"></div>
-
-		<!-- Embedded Scripts -->
-		<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-		<script>
-/* Breakpoints Helper */
-var breakpoints=function(){"use strict";function e(e){t.init(e)}var t={list:null,media:{},events:[],init:function(e){t.list=e,window.addEventListener("resize",t.poll),window.addEventListener("orientationchange",t.poll),window.addEventListener("load",t.poll),window.addEventListener("fullscreenchange",t.poll)},active:function(e){var n,a,s,i,r,d,c;if(!(e in t.media)){if(">="==e.substr(0,2)?(a="gte",n=e.substr(2)):"<="==e.substr(0,2)?(a="lte",n=e.substr(2)):">"==e.substr(0,1)?(a="gt",n=e.substr(1)):"<"==e.substr(0,1)?(a="lt",n=e.substr(1)):"!"==e.substr(0,1)?(a="not",n=e.substr(1)):(a="eq",n=e),n&&n in t.list)if(i=t.list[n],Array.isArray(i)){if(r=parseInt(i[0]),d=parseInt(i[1]),isNaN(r)){if(isNaN(d))return;c=i[1].substr(String(d).length)}else c=i[0].substr(String(r).length);if(isNaN(r))switch(a){case"gte":s="screen";break;case"lte":s="screen and (max-width: "+d+c+")";break;case"gt":s="screen and (min-width: "+(d+1)+c+")";break;case"lt":s="screen and (max-width: -1px)";break;case"not":s="screen and (min-width: "+(d+1)+c+")";break;default:s="screen and (max-width: "+d+c+")"}else if(isNaN(d))switch(a){case"gte":s="screen and (min-width: "+r+c+")";break;case"lte":s="screen";break;case"gt":s="screen and (max-width: -1px)";break;case"lt":s="screen and (max-width: "+(r-1)+c+")";break;case"not":s="screen and (max-width: "+(r-1)+c+")";break;default:s="screen and (min-width: "+r+c+")"}else switch(a){case"gte":s="screen and (min-width: "+r+c+")";break;case"lte":s="screen and (max-width: "+d+c+")";break;case"gt":s="screen and (min-width: "+(d+1)+c+")";break;case"lt":s="screen and (max-width: "+(r-1)+c+")";break;case"not":s="screen and (max-width: "+(r-1)+c+"), screen and (min-width: "+(d+1)+c+")";break;default:s="screen and (min-width: "+r+c+") and (max-width: "+d+c+")"}}else s="("==i.charAt(0)?"screen and "+i:i;t.media[e]=!!s&&s}return t.media[e]!==!1&&window.matchMedia(t.media[e]).matches},on:function(e,n){t.events.push({query:e,handler:n,state:!1}),t.active(e)&&n()},poll:function(){var e,n;for(e=0;e<t.events.length;e++)n=t.events[e],t.active(n.query)?n.state||(n.state=!0,n.handler()):n.state&&(n.state=!1)}};return e._=t,e.on=function(e,n){t.on(e,n)},e.active=function(e){return t.active(e)},e}();
-
-/* Browser Detector Helper */
-var browser=function(){"use strict";var t={name:null,version:null,os:null,osVersion:null,touch:null,mobile:null,_canUse:null,canUse:function(e){t._canUse||(t._canUse=document.createElement("div"));var n=t._canUse.style,r=e.charAt(0).toUpperCase()+e.slice(1);return e in n||"Moz"+r in n||"Webkit"+r in n||"O"+r in n||"ms"+r in n},init:function(){for(var e=navigator.userAgent,n="other",r=0,i=[["firefox",/Firefox\/([0-9\.]+)/],["bb",/BlackBerry.+Version\/([0-9\.]+)/],["bb",/BB[0-9]+.+Version\/([0-9\.]+)/],["opera",/OPR\/([0-9\.]+)/],["opera",/Opera\/([0-9\.]+)/],["edge",/Edge\/([0-9\.]+)/],["safari",/Version\/([0-9\.]+).+Safari/],["chrome",/Chrome\/([0-9\.]+)/],["ie",/MSIE ([0-9]+)/],["ie",/Trident\/.+rv:([0-9]+)/]],o=0;o<i.length;o++)if(e.match(i[o][1])){n=i[o][0],r=parseFloat(RegExp.$1);break}for(t.name=n,t.version=r,n="other",i=[["ios",/([0-9_]+) like Mac OS X/,function(e){return e.replace("_",".").replace("_","")}],["ios",/CPU like Mac OS X/,function(e){return 0}],["wp",/Windows Phone ([0-9\.]+)/,null],["android",/Android ([0-9\.]+)/,null],["mac",/Macintosh.+Mac OS X ([0-9_]+)/,function(e){return e.replace("_",".").replace("_","")}],["windows",/Windows NT ([0-9\.]+)/,null],["bb",/BlackBerry.+Version\/([0-9\.]+)/,null],["bb",/BB[0-9]+.+Version\/([0-9\.]+)/,null],["linux",/Linux/,null],["bsd",/BSD/,null],["unix",/X11/,null]],o=r=0;o<i.length;o++)if(e.match(i[o][1])){n=i[o][0],r=parseFloat(i[o][2]?i[o][2](RegExp.$1):RegExp.$1);break}"mac"==n&&"ontouchstart"in window&&(1024==screen.width&&1366==screen.height||834==screen.width&&1112==screen.height||810==screen.width&&1080==screen.height||768==screen.width&&1024==screen.height)&&(n="ios"),t.os=n,t.osVersion=r,t.touch="wp"==t.os?0<navigator.msMaxTouchPoints:!!("ontouchstart"in window),t.mobile="wp"==t.os||"android"==t.os||"ios"==t.os||"bb"==t.os}};return t.init(),t}();
-
-/* Main Interaction Logic */
-(function($) {
-	var $window = $(window),
-		$body = $('body'),
-		$wrapper = $('#wrapper'),
-		$header = $('#header'),
-		$footer = $('#footer'),
-		$main = $('#main'),
-		$main_articles = $main.children('article');
-
-	// Breakpoints initialization
-	breakpoints({
-		xlarge:   [ '1281px',  '1680px' ],
-		large:    [ '981px',   '1280px' ],
-		medium:   [ '737px',   '980px'  ],
-		small:    [ '481px',   '736px'  ],
-		xsmall:   [ '361px',   '480px'  ],
-		xxsmall:  [ null,      '360px'  ]
-	});
-
-	// Animations on load
-	$window.on('load', function() {
-		window.setTimeout(function() {
-			$body.removeClass('is-preload');
-		}, 100);
-	});
-
-	// Nav middle alignment
-	var $nav = $header.children('nav'),
-		$nav_li = $nav.find('li');
-
-	if ($nav_li.length % 2 == 0) {
-		$nav.addClass('use-middle');
-		$nav_li.eq( ($nav_li.length / 2) ).addClass('is-middle');
-	}
-
-	// Article Switching Logic
-	var delay = 325, locked = false;
-
-	$main._show = function(id, initial) {
-		var $article = $main_articles.filter('#' + id);
-		if ($article.length == 0) return;
-
-		if (locked || (typeof initial != 'undefined' && initial === true)) {
-			$body.addClass('is-switching');
-			$body.addClass('is-article-visible');
-			$main_articles.removeClass('active');
-			$header.hide();
-			$footer.hide();
-			$main.show();
-			$article.show();
-			$article.addClass('active');
-			locked = false;
-			setTimeout(function() {
-				$body.removeClass('is-switching');
-			}, (initial ? 1000 : 0));
-			return;
-		}
-
-		locked = true;
-
-		if ($body.hasClass('is-article-visible')) {
-			var $currentArticle = $main_articles.filter('.active');
-			$currentArticle.removeClass('active');
-			setTimeout(function() {
-				$currentArticle.hide();
-				$article.show();
-				setTimeout(function() {
-					$article.addClass('active');
-					$window.scrollTop(0);
-					setTimeout(function() { locked = false; }, delay);
-				}, 25);
-			}, delay);
-		} else {
-			$body.addClass('is-article-visible');
-			setTimeout(function() {
-				$header.hide();
-				$footer.hide();
-				$main.show();
-				$article.show();
-				setTimeout(function() {
-					$article.addClass('active');
-					$window.scrollTop(0);
-					setTimeout(function() { locked = false; }, delay);
-				}, 25);
-			}, delay);
-		}
-	};
-
-	$main._hide = function(addState) {
-		var $article = $main_articles.filter('.active');
-		if (!$body.hasClass('is-article-visible')) return;
-
-		if (typeof addState != 'undefined' && addState === true) {
-			history.pushState(null, null, '#');
-		}
-
-		if (locked) {
-			$body.addClass('is-switching');
-			$article.removeClass('active');
-			$article.hide();
-			$main.hide();
-			$footer.show();
-			$header.show();
-			$body.removeClass('is-article-visible');
-			locked = false;
-			$body.removeClass('is-switching');
-			$window.scrollTop(0);
-			return;
-		}
-
-		locked = true;
-		$article.removeClass('active');
-
-		setTimeout(function() {
-			$article.hide();
-			$main.hide();
-			$footer.show();
-			$header.show();
-			setTimeout(function() {
-				$body.removeClass('is-article-visible');
-				$window.scrollTop(0);
-				setTimeout(function() { locked = false; }, delay);
-			}, 25);
-		}, delay);
-	};
-
-	// Close buttons for articles
-	$main_articles.each(function() {
-		var $this = $(this);
-		$('<div class="close">Close</div>')
-			.appendTo($this)
-			.on('click', function() {
-				location.hash = '';
-			});
-		$this.on('click', function(event) {
-			event.stopPropagation();
-		});
-	});
-
-	// Global events
-	$body.on('click', function(event) {
-		if ($body.hasClass('is-article-visible')) {
-			$main._hide(true);
-		}
-	});
-
-	$window.on('keyup', function(event) {
-		if (event.keyCode == 27 && $body.hasClass('is-article-visible')) {
-			$main._hide(true);
-		}
-	});
-
-	$window.on('hashchange', function(event) {
-		if (location.hash == '' || location.hash == '#') {
-			event.preventDefault();
-			event.stopPropagation();
-			$main._hide();
-		} else if ($main_articles.filter(location.hash).length > 0) {
-			event.preventDefault();
-			event.stopPropagation();
-			$main._show(location.hash.substr(1));
-		}
-	});
-
-	if ('scrollRestoration' in history) {
-		history.scrollRestoration = 'manual';
-	}
-
-	// Initial page state
-	$main.hide();
-	$main_articles.hide();
-
-	if (location.hash != '' && location.hash != '#') {
-		$window.on('load', function() {
-			$main._show(location.hash.substr(1), true);
-		});
-	}
-})(jQuery);
-		</script>
-	</body>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Amanat Transport | Next-Gen Logistics & Freight Solutions</title>
+  
+  <!-- SEO Meta Tags -->
+  <meta name="description" content="Amanat Transport provides reliable, efficient, and secure logistics, long-haul freight, and supply chain solutions tailored for modern businesses." />
+  
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300..800;1,300..800&family=Space+Grotesk:wght@500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+  
+  <!-- Font Awesome 6 -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+
+  <style>
+    /* ==========================================================================
+       DESIGN SYSTEM & CSS VARIABLES
+       ========================================================================== */
+    :root {
+      --bg-primary: #030712;
+      --bg-secondary: #0B132B;
+      --bg-card: rgba(15, 23, 42, 0.65);
+      --bg-card-hover: rgba(30, 41, 59, 0.85);
+      --border-color: rgba(255, 255, 255, 0.12);
+      --border-glow: rgba(59, 130, 246, 0.5);
+      
+      --accent-blue: #3B82F6;
+      --accent-blue-light: #60A5FA;
+      --accent-cyan: #06B6D4;
+      --accent-emerald: #10B981;
+      --accent-purple: #8B5CF6;
+      
+      --text-primary: #F8FAFC;
+      --text-secondary: #94A3B8;
+      --text-muted: #64748B;
+      
+      --font-heading: 'Space Grotesk', sans-serif;
+      --font-body: 'Plus Jakarta Sans', sans-serif;
+      --font-mono: 'JetBrains Mono', monospace;
+      
+      --radius-sm: 8px;
+      --radius-md: 16px;
+      --radius-lg: 24px;
+      --radius-full: 9999px;
+      
+      --shadow-glow: 0 0 30px rgba(59, 130, 246, 0.25);
+      --shadow-cyan: 0 0 30px rgba(6, 182, 212, 0.25);
+      --transition-smooth: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    /* Reset & Base Settings */
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      font-size: 16px;
+      background-color: var(--bg-primary);
+      color: var(--text-primary);
+      font-family: var(--font-body);
+      overflow-x: hidden;
+    }
+
+    body {
+      min-height: 100vh;
+      line-height: 1.6;
+      background: radial-gradient(circle at 50% 0%, #0F172A 0%, #030712 100%);
+      position: relative;
+    }
+
+    /* 3D Canvas Background */
+    #webgl-canvas {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      z-index: 0;
+      pointer-events: none;
+      opacity: 0.85;
+    }
+
+    /* Typography */
+    h1, h2, h3, h4, h5, h6 {
+      font-family: var(--font-heading);
+      font-weight: 700;
+      color: var(--text-primary);
+      line-height: 1.2;
+    }
+
+    p {
+      color: var(--text-secondary);
+      font-size: 1.05rem;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+      transition: var(--transition-smooth);
+    }
+
+    /* ==========================================================================
+       GLASSMORPHISM & COMPONENTS
+       ========================================================================== */
+    .glass-card {
+      background: var(--bg-card);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-lg);
+      padding: 2.5rem;
+      position: relative;
+      overflow: hidden;
+      transition: var(--transition-smooth);
+      transform-style: preserve-3d;
+    }
+
+    .glass-card:hover {
+      border-color: var(--border-glow);
+      box-shadow: var(--shadow-glow);
+      background: var(--bg-card-hover);
+    }
+
+    .glass-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 2px;
+      background: linear-gradient(90deg, transparent, var(--accent-cyan), var(--accent-blue), transparent);
+      opacity: 0;
+      transition: var(--transition-smooth);
+    }
+
+    .glass-card:hover::before {
+      opacity: 1;
+    }
+
+    /* Badge & Chips */
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.4rem 1rem;
+      border-radius: var(--radius-full);
+      background: rgba(59, 130, 246, 0.12);
+      border: 1px solid rgba(59, 130, 246, 0.3);
+      color: var(--accent-blue-light);
+      font-size: 0.85rem;
+      font-family: var(--font-mono);
+      font-weight: 500;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    .badge-cyan {
+      background: rgba(6, 182, 212, 0.12);
+      border-color: rgba(6, 182, 212, 0.3);
+      color: var(--accent-cyan);
+    }
+
+    /* Buttons */
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.75rem;
+      padding: 0.9rem 2rem;
+      border-radius: var(--radius-full);
+      font-family: var(--font-heading);
+      font-weight: 600;
+      font-size: 1rem;
+      cursor: pointer;
+      border: none;
+      transition: var(--transition-smooth);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .btn-primary {
+      background: linear-gradient(135deg, var(--accent-blue) 0%, var(--accent-cyan) 100%);
+      color: #ffffff;
+      box-shadow: 0 4px 20px rgba(59, 130, 246, 0.4);
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 30px rgba(6, 182, 212, 0.6);
+      filter: brightness(1.1);
+    }
+
+    .btn-outline {
+      background: rgba(255, 255, 255, 0.03);
+      border: 1px solid var(--border-color);
+      color: var(--text-primary);
+      backdrop-filter: blur(8px);
+    }
+
+    .btn-outline:hover {
+      border-color: var(--accent-blue-light);
+      background: rgba(59, 130, 246, 0.1);
+      color: #ffffff;
+      transform: translateY(-2px);
+    }
+
+    .btn-emerald {
+      background: linear-gradient(135deg, var(--accent-emerald) 0%, #059669 100%);
+      color: #ffffff;
+      box-shadow: 0 4px 20px rgba(16, 185, 129, 0.3);
+    }
+
+    .btn-emerald:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 30px rgba(16, 185, 129, 0.5);
+    }
+
+    /* Section Container */
+    .section-wrapper {
+      position: relative;
+      z-index: 10;
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 0 1.5rem;
+    }
+
+    .section-header {
+      text-align: center;
+      max-width: 750px;
+      margin: 0 auto 4rem auto;
+    }
+
+    .section-header h2 {
+      font-size: 2.75rem;
+      margin: 1rem 0;
+      background: linear-gradient(180deg, #FFFFFF 0%, #94A3B8 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    /* ==========================================================================
+       HEADER & NAVBAR
+       ========================================================================== */
+    .navbar {
+      position: fixed;
+      top: 1.5rem;
+      left: 50%;
+      transform: translateX(-50%);
+      width: calc(100% - 3rem);
+      max-width: 1280px;
+      z-index: 100;
+      background: rgba(3, 7, 18, 0.75);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: var(--radius-full);
+      padding: 0.75rem 1.75rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      transition: var(--transition-smooth);
+    }
+
+    .nav-brand {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+    }
+
+    .nav-logo-icon {
+      width: 42px;
+      height: 42px;
+      border-radius: var(--radius-full);
+      background: linear-gradient(135deg, var(--accent-blue) 0%, var(--accent-cyan) 100%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #ffffff;
+      font-size: 1.25rem;
+      box-shadow: 0 0 15px rgba(59, 130, 246, 0.5);
+    }
+
+    .nav-title {
+      font-family: var(--font-heading);
+      font-weight: 700;
+      font-size: 1.2rem;
+      letter-spacing: 0.05em;
+      color: #ffffff;
+    }
+
+    .nav-title span {
+      color: var(--accent-cyan);
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 2rem;
+      list-style: none;
+    }
+
+    .nav-link {
+      font-size: 0.95rem;
+      font-weight: 500;
+      color: var(--text-secondary);
+      position: relative;
+    }
+
+    .nav-link:hover {
+      color: #ffffff;
+    }
+
+    .nav-link::after {
+      content: '';
+      position: absolute;
+      bottom: -6px;
+      left: 0;
+      width: 0%;
+      height: 2px;
+      background: var(--accent-cyan);
+      transition: var(--transition-smooth);
+      border-radius: 2px;
+    }
+
+    .nav-link:hover::after {
+      width: 100%;
+    }
+
+    .nav-actions {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    .mobile-toggle {
+      display: none;
+      background: none;
+      border: none;
+      color: #ffffff;
+      font-size: 1.5rem;
+      cursor: pointer;
+    }
+
+    /* ==========================================================================
+       HERO SECTION
+       ========================================================================== */
+    .hero-section {
+      min-height: 100vh;
+      padding-top: 10rem;
+      padding-bottom: 5rem;
+      display: flex;
+      align-items: center;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.2fr 0.8fr;
+      gap: 3rem;
+      align-items: center;
+    }
+
+    .hero-content h1 {
+      font-size: 3.8rem;
+      letter-spacing: -0.02em;
+      margin: 1.25rem 0;
+      background: linear-gradient(180deg, #FFFFFF 0%, #CBD5E1 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .hero-content h1 span {
+      background: linear-gradient(135deg, var(--accent-cyan) 0%, var(--accent-blue-light) 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .hero-subtitle {
+      font-size: 1.2rem;
+      color: var(--text-secondary);
+      margin-bottom: 2.5rem;
+      max-width: 600px;
+    }
+
+    .hero-buttons {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1.25rem;
+      margin-bottom: 3.5rem;
+    }
+
+    /* Counter Bar */
+    .counter-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1.5rem;
+      padding: 1.75rem;
+      background: rgba(15, 23, 42, 0.7);
+      backdrop-filter: blur(20px);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-lg);
+    }
+
+    .counter-item {
+      text-align: center;
+      border-right: 1px solid rgba(255, 255, 255, 0.08);
+    }
+
+    .counter-item:last-child {
+      border-right: none;
+    }
+
+    .counter-num {
+      font-family: var(--font-heading);
+      font-size: 2.2rem;
+      font-weight: 700;
+      color: var(--accent-cyan);
+    }
+
+    .counter-label {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin-top: 0.25rem;
+    }
+
+    /* 3D Hero Floating Card Visual */
+    .hero-visual-card {
+      position: relative;
+      perspective: 1000px;
+    }
+
+    .hero-3d-box {
+      width: 100%;
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.6);
+      border: 1px solid var(--border-color);
+      transform-style: preserve-3d;
+      transition: transform 0.5s ease-out;
+    }
+
+    .hero-3d-box img {
+      width: 100%;
+      height: 480px;
+      object-fit: cover;
+      display: block;
+      filter: brightness(0.9) contrast(1.1);
+    }
+
+    .hero-floating-badge {
+      position: absolute;
+      bottom: -1.5rem;
+      left: -1.5rem;
+      background: rgba(11, 19, 43, 0.9);
+      backdrop-filter: blur(20px);
+      border: 1px solid var(--accent-cyan);
+      border-radius: var(--radius-md);
+      padding: 1.25rem;
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      box-shadow: var(--shadow-cyan);
+      z-index: 5;
+    }
+
+    .floating-icon {
+      width: 48px;
+      height: 48px;
+      border-radius: var(--radius-md);
+      background: rgba(6, 182, 212, 0.15);
+      color: var(--accent-cyan);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.5rem;
+    }
+
+    /* ==========================================================================
+       SERVICES SECTION (3D TILT CARDS)
+       ========================================================================== */
+    .services-section {
+      padding: 8rem 0;
+    }
+
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 2rem;
+    }
+
+    .service-card {
+      display: flex;
+      flex-direction: column;
+      height: 100%;
+    }
+
+    .service-icon-box {
+      width: 60px;
+      height: 60px;
+      border-radius: var(--radius-md);
+      background: linear-gradient(135deg, rgba(59, 130, 246, 0.2) 0%, rgba(6, 182, 212, 0.2) 100%);
+      border: 1px solid rgba(59, 130, 246, 0.3);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--accent-cyan);
+      font-size: 1.75rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .service-title {
+      font-size: 1.4rem;
+      margin-bottom: 1rem;
+    }
+
+    .service-desc {
+      color: var(--text-secondary);
+      font-size: 0.98rem;
+      margin-bottom: 1.75rem;
+      flex-grow: 1;
+    }
+
+    .service-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      color: var(--accent-cyan);
+      font-weight: 600;
+      font-size: 0.95rem;
+    }
+
+    .service-link i {
+      transition: var(--transition-smooth);
+    }
+
+    .service-card:hover .service-link i {
+      transform: translateX(6px);
+    }
+
+    /* ==========================================================================
+       WORK & OPERATIONS SHOWCASE
+       ========================================================================== */
+    .work-section {
+      padding: 8rem 0;
+      position: relative;
+    }
+
+    .work-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4rem;
+      align-items: center;
+      margin-bottom: 6rem;
+    }
+
+    .work-grid.reverse {
+      direction: rtl;
+    }
+
+    .work-grid.reverse > * {
+      direction: ltr;
+    }
+
+    .work-img-wrapper {
+      position: relative;
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      border: 1px solid var(--border-color);
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
+    }
+
+    .work-img-wrapper img {
+      width: 100%;
+      height: 400px;
+      object-fit: cover;
+      display: block;
+      transition: var(--transition-smooth);
+    }
+
+    .work-img-wrapper:hover img {
+      transform: scale(1.04);
+    }
+
+    .feature-list {
+      list-style: none;
+      margin: 2rem 0;
+    }
+
+    .feature-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 1rem;
+      margin-bottom: 1.25rem;
+    }
+
+    .feature-check {
+      width: 26px;
+      height: 26px;
+      border-radius: var(--radius-full);
+      background: rgba(16, 185, 129, 0.15);
+      color: var(--accent-emerald);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.85rem;
+      flex-shrink: 0;
+      margin-top: 0.2rem;
+    }
+
+    /* ==========================================================================
+       ABOUT SECTION
+       ========================================================================== */
+    .about-section {
+      padding: 8rem 0;
+    }
+
+    .about-card {
+      background: linear-gradient(135deg, rgba(15, 23, 42, 0.8) 0%, rgba(11, 19, 43, 0.9) 100%);
+      border: 1px solid var(--border-glow);
+      padding: 4rem;
+      border-radius: var(--radius-lg);
+    }
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 3rem;
+      align-items: center;
+    }
+
+    /* ==========================================================================
+       FREIGHT CALCULATOR & CONTACT SECTION
+       ========================================================================== */
+    .calculator-section {
+      padding: 8rem 0;
+    }
+
+    .calc-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 3rem;
+    }
+
+    /* Form Styles */
+    .form-group {
+      margin-bottom: 1.5rem;
+    }
+
+    .form-group label {
+      display: block;
+      font-size: 0.9rem;
+      font-family: var(--font-mono);
+      color: var(--text-secondary);
+      margin-bottom: 0.5rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    .form-control {
+      width: 100%;
+      padding: 1rem 1.25rem;
+      background: rgba(3, 7, 18, 0.6);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-md);
+      color: #ffffff;
+      font-family: var(--font-body);
+      font-size: 1rem;
+      outline: none;
+      transition: var(--transition-smooth);
+    }
+
+    .form-control:focus {
+      border-color: var(--accent-cyan);
+      box-shadow: 0 0 15px rgba(6, 182, 212, 0.25);
+    }
+
+    select.form-control {
+      cursor: pointer;
+    }
+
+    select.form-control option {
+      background: var(--bg-primary);
+      color: #ffffff;
+    }
+
+    .slider-container {
+      margin: 1.5rem 0;
+    }
+
+    .range-slider {
+      width: 100%;
+      height: 8px;
+      border-radius: 4px;
+      background: rgba(255, 255, 255, 0.1);
+      outline: none;
+      cursor: pointer;
+      accent-color: var(--accent-cyan);
+    }
+
+    /* Quote Output Card */
+    .quote-result-card {
+      background: rgba(6, 182, 212, 0.06);
+      border: 1px solid rgba(6, 182, 212, 0.3);
+      border-radius: var(--radius-md);
+      padding: 2rem;
+      text-align: center;
+      margin-top: 2rem;
+    }
+
+    .quote-price {
+      font-family: var(--font-heading);
+      font-size: 3rem;
+      color: var(--accent-cyan);
+      font-weight: 700;
+      margin: 0.5rem 0;
+    }
+
+    /* Contact Alert Notice */
+    .form-status {
+      display: none;
+      padding: 1rem;
+      border-radius: var(--radius-md);
+      margin-top: 1.5rem;
+      font-weight: 500;
+      text-align: center;
+    }
+
+    .form-status.success {
+      display: block;
+      background: rgba(16, 185, 129, 0.15);
+      border: 1px solid var(--accent-emerald);
+      color: var(--accent-emerald);
+    }
+
+    /* ==========================================================================
+       FOOTER & QUICK ACTIONS
+       ========================================================================== */
+    .footer {
+      border-top: 1px solid var(--border-color);
+      background: rgba(3, 7, 18, 0.95);
+      padding: 4rem 0 2rem 0;
+      position: relative;
+      z-index: 10;
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr 1fr;
+      gap: 3rem;
+      margin-bottom: 3rem;
+    }
+
+    .social-links {
+      display: flex;
+      gap: 1rem;
+      margin-top: 1.5rem;
+    }
+
+    .social-btn {
+      width: 40px;
+      height: 40px;
+      border-radius: var(--radius-full);
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid var(--border-color);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--text-secondary);
+      transition: var(--transition-smooth);
+    }
+
+    .social-btn:hover {
+      background: var(--accent-blue);
+      color: #ffffff;
+      border-color: var(--accent-blue);
+      transform: translateY(-3px);
+    }
+
+    .footer-bottom {
+      border-top: 1px solid rgba(255, 255, 255, 0.08);
+      padding-top: 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 0.9rem;
+      color: var(--text-muted);
+    }
+
+    /* Floating Call Widget */
+    .floating-call-btn {
+      position: fixed;
+      bottom: 2rem;
+      right: 2rem;
+      z-index: 99;
+      background: linear-gradient(135deg, var(--accent-emerald) 0%, #059669 100%);
+      color: #ffffff;
+      padding: 0.9rem 1.75rem;
+      border-radius: var(--radius-full);
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      box-shadow: 0 10px 25px rgba(16, 185, 129, 0.4);
+      font-family: var(--font-heading);
+      font-weight: 700;
+      transition: var(--transition-smooth);
+    }
+
+    .floating-call-btn:hover {
+      transform: translateY(-4px) scale(1.03);
+      box-shadow: 0 15px 35px rgba(16, 185, 129, 0.6);
+    }
+
+    /* ==========================================================================
+       RESPONSIVE MEDIA QUERIES
+       ========================================================================== */
+    @media (max-width: 1024px) {
+      .hero-grid, .work-grid, .about-grid, .calc-grid, .footer-grid {
+        grid-template-columns: 1fr;
+      }
+      .hero-content h1 {
+        font-size: 2.8rem;
+      }
+      .counter-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1.5rem;
+      }
+      .counter-item {
+        border-right: none;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .navbar {
+        width: calc(100% - 2rem);
+        padding: 0.75rem 1.25rem;
+      }
+      .nav-links {
+        display: none; /* Can be expanded via toggle */
+      }
+      .mobile-toggle {
+        display: block;
+      }
+      .hero-buttons {
+        flex-direction: column;
+      }
+      .btn {
+        width: 100%;
+      }
+      .counter-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+      .footer-bottom {
+        flex-direction: column;
+        gap: 1rem;
+        text-align: center;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- 3D WebGL Animated Canvas -->
+  <canvas id="webgl-canvas"></canvas>
+
+  <!-- Sticky Glass Navigation -->
+  <nav class="navbar">
+    <a href="#" class="nav-brand">
+      <div class="nav-logo-icon">
+        <i class="fa-solid fa-truck-fast"></i>
+      </div>
+      <div class="nav-title">AMANAT <span>LOGISTICS</span></div>
+    </a>
+    
+    <ul class="nav-links">
+      <li><a href="#services" class="nav-link">Services</a></li>
+      <li><a href="#work" class="nav-link">Work</a></li>
+      <li><a href="#about" class="nav-link">About</a></li>
+      <li><a href="#calculator" class="nav-link">Freight Quote</a></li>
+      <li><a href="#contact" class="nav-link">Contact</a></li>
+    </ul>
+
+    <div class="nav-actions">
+      <a href="tel:+919035002910" class="btn btn-outline" style="padding: 0.6rem 1.25rem; font-size: 0.9rem;">
+        <i class="fa-solid fa-phone"></i> +91 9035002910
+      </a>
+      <a href="#calculator" class="btn btn-primary" style="padding: 0.6rem 1.25rem; font-size: 0.9rem;">
+        Get Quote
+      </a>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="hero-section">
+    <div class="section-wrapper">
+      <div class="hero-grid">
+        
+        <div class="hero-content">
+          <div class="badge badge-cyan">
+            <i class="fa-solid fa-shield-halved"></i> Reliable • Efficient • Nationwide
+          </div>
+          
+          <h1>Where Reliability Meets <span>Next-Gen Logistics</span></h1>
+          
+          <p class="hero-subtitle">
+            Welcome to Amanat Transport. We specialize in seamless, high-speed freight transportation solutions connecting enterprises with their supply chain destination with security and absolute precision.
+          </p>
+          
+          <div class="hero-buttons">
+            <a href="#calculator" class="btn btn-primary">
+              <i class="fa-solid fa-calculator"></i> Estimate Freight Quote
+            </a>
+            <a href="#services" class="btn btn-outline">
+              <i class="fa-solid fa-boxes-stacked"></i> Explore Services
+            </a>
+            <a href="https://g.co/kgs/gUo8CB" target="_blank" class="btn btn-outline">
+              <i class="fa-solid fa-location-dot"></i> View Depot Location
+            </a>
+          </div>
+
+          <!-- Counter Stats -->
+          <div class="counter-grid">
+            <div class="counter-item">
+              <div class="counter-num" data-target="10">10M+</div>
+              <div class="counter-label">Miles Covered</div>
+            </div>
+            <div class="counter-item">
+              <div class="counter-num" data-target="99">99.8%</div>
+              <div class="counter-label">On-Time Rate</div>
+            </div>
+            <div class="counter-item">
+              <div class="counter-num">24/7</div>
+              <div class="counter-label">GPS Tracking</div>
+            </div>
+            <div class="counter-item">
+              <div class="counter-num" data-target="500">500+</div>
+              <div class="counter-label">Active Clients</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Hero 3D Card Visual -->
+        <div class="hero-visual-card">
+          <div class="hero-3d-box tilt-card">
+            <img src="images/pic01.jpg" alt="Amanat Transport Fleet Truck" />
+          </div>
+          
+          <div class="hero-floating-badge">
+            <div class="floating-icon">
+              <i class="fa-solid fa-satellite-dish"></i>
+            </div>
+            <div>
+              <div style="font-family: var(--font-heading); font-weight: 700; color: #ffffff;">Live Fleet Dispatch</div>
+              <div style="font-size: 0.85rem; color: var(--accent-cyan);">Real-time Telematics Active</div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Services Section -->
+  <section id="services" class="services-section">
+    <div class="section-wrapper">
+      
+      <div class="section-header">
+        <div class="badge">Comprehensive Solutions</div>
+        <h2>Enterprise Freight & Transport Services</h2>
+        <p>From full truckload freight to time-sensitive express shipments, we deploy state-of-the-art fleet logistics tailored to your exact industry demands.</p>
+      </div>
+
+      <div class="services-grid">
+        
+        <!-- Card 1 -->
+        <div class="glass-card service-card tilt-card">
+          <div class="service-icon-box">
+            <i class="fa-solid fa-truck-moving"></i>
+          </div>
+          <h3 class="service-title">Full Truckload (FTL)</h3>
+          <p class="service-desc">
+            Dedicated long-haul and regional transport for heavy industrial cargo. Direct point-to-point dispatch with zero intermediate handoffs.
+          </p>
+          <a href="#contact" class="service-link">Inquire FTL Logistics <i class="fa-solid fa-arrow-right"></i></a>
+        </div>
+
+        <!-- Card 2 -->
+        <div class="glass-card service-card tilt-card">
+          <div class="service-icon-box">
+            <i class="fa-solid fa-bolt-lightning"></i>
+          </div>
+          <h3 class="service-title">Express Freight Dispatch</h3>
+          <p class="service-desc">
+            Time-critical shipping solutions designed for high-priority shipments requiring expedited routing and continuous GPS monitoring.
+          </p>
+          <a href="#contact" class="service-link">Book Express Dispatch <i class="fa-solid fa-arrow-right"></i></a>
+        </div>
+
+        <!-- Card 3 -->
+        <div class="glass-card service-card tilt-card">
+          <div class="service-icon-box">
+            <i class="fa-solid fa-network-wired"></i>
+          </div>
+          <h3 class="service-title">Supply Chain Management</h3>
+          <p class="service-desc">
+            End-to-end logistics coordination, route optimization, and scheduling to streamline supply chains for maximum operational efficiency.
+          </p>
+          <a href="#contact" class="service-link">Explore Coordination <i class="fa-solid fa-arrow-right"></i></a>
+        </div>
+
+        <!-- Card 4 -->
+        <div class="glass-card service-card tilt-card">
+          <div class="service-icon-box">
+            <i class="fa-solid fa-shield-cat"></i>
+          </div>
+          <h3 class="service-title">Secure & Insured Transit</h3>
+          <p class="service-desc">
+            Full comprehensive cargo coverage and tamper-evident security protocols safeguarding high-value enterprise goods in transit.
+          </p>
+          <a href="#contact" class="service-link">Learn Safety Standards <i class="fa-solid fa-arrow-right"></i></a>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Work & Operations Showcase -->
+  <section id="work" class="work-section">
+    <div class="section-wrapper">
+      
+      <div class="work-grid">
+        <div class="work-img-wrapper tilt-card">
+          <img src="images/pic02.jpg" alt="Logistical Precision Operations" />
+        </div>
+        
+        <div>
+          <div class="badge badge-cyan">Precision Execution</div>
+          <h2 style="font-size: 2.5rem; margin: 1rem 0;">The Artistry of Modern Logistics</h2>
+          <p>
+            At Amanat Transport, our work is a finely tuned symphony of precision and dedication. Every shipment is backed by skilled transport professionals and intelligent routing technology to maximize speed and minimize downtime.
+          </p>
+
+          <ul class="feature-list">
+            <li class="feature-item">
+              <div class="feature-check"><i class="fa-solid fa-check"></i></div>
+              <div>
+                <strong style="color: #ffffff;">Automated Route Optimization:</strong> Reducing fuel burn and transit time through smart telemetry.
+              </div>
+            </li>
+            <li class="feature-item">
+              <div class="feature-check"><i class="fa-solid fa-check"></i></div>
+              <div>
+                <strong style="color: #ffffff;">24/7 Dedicated Control Center:</strong> Proactive weather and traffic monitoring around the clock.
+              </div>
+            </li>
+            <li class="feature-item">
+              <div class="feature-check"><i class="fa-solid fa-check"></i></div>
+              <div>
+                <strong style="color: #ffffff;">Transparent Milestone Tracking:</strong> Live status updates delivered to your dashboard at every stage.
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- About Section -->
+  <section id="about" class="about-section">
+    <div class="section-wrapper">
+      <div class="about-card">
+        <div class="about-grid">
+          
+          <div>
+            <div class="badge">Building Lasting Partnerships</div>
+            <h2 style="font-size: 2.5rem; margin: 1rem 0;">More Than Just a Transport Company</h2>
+            <p style="margin-bottom: 1.5rem;">
+              We are a team of dedicated professionals passionate about elevating regional freight standards. Amanat Transport stands as a facilitator of growth, a guardian of deadlines, and a proponent of unparalleled service quality.
+            </p>
+            <p>
+              Whether you are an emerging business seeking scalable shipping or an established corporate enterprise requiring high-capacity fleet management, we deliver peace of mind with every load.
+            </p>
+            <div style="margin-top: 2rem;">
+              <a href="tel:+919035002910" class="btn btn-emerald">
+                <i class="fa-solid fa-headset"></i> Talk to a Fleet Specialist
+              </a>
+            </div>
+          </div>
+
+          <div class="hero-visual-card">
+            <div class="hero-3d-box tilt-card">
+              <img src="images/pic03.jpg" alt="Amanat Transport Fleet Operations" />
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Freight Calculator & Contact Section -->
+  <section id="calculator" class="calculator-section">
+    <div class="section-wrapper">
+      
+      <div class="section-header">
+        <div class="badge badge-cyan">Instant Estimation</div>
+        <h2>Interactive Freight Quote Calculator</h2>
+        <p>Estimate your shipping cost instantly or submit a request directly to our dispatch team for a custom enterprise quotation.</p>
+      </div>
+
+      <div class="calc-grid">
+        
+        <!-- Interactive Estimator -->
+        <div class="glass-card">
+          <h3 style="font-size: 1.5rem; margin-bottom: 1.5rem;"><i class="fa-solid fa-calculator" style="color: var(--accent-cyan);"></i> Shipping Cost Estimator</h3>
+          
+          <div class="form-group">
+            <label for="service-tier">Select Service Level</label>
+            <select id="service-tier" class="form-control">
+              <option value="standard">Standard Full Truckload (FTL)</option>
+              <option value="express">Express Priority Freight (+25%)</option>
+              <option value="heavy">Heavy Haul & Special Cargo (+40%)</option>
+            </select>
+          </div>
+
+          <div class="slider-container">
+            <div style="display: flex; justify-content: space-between; margin-bottom: 0.5rem;">
+              <label>Estimated Distance (KM)</label>
+              <span id="distance-val" style="font-family: var(--font-mono); color: var(--accent-cyan); font-weight: 600;">250 KM</span>
+            </div>
+            <input type="range" id="distance-slider" class="range-slider" min="50" max="2500" step="25" value="250">
+          </div>
+
+          <div class="slider-container">
+            <div style="display: flex; justify-content: space-between; margin-bottom: 0.5rem;">
+              <label>Cargo Weight (Tons)</label>
+              <span id="weight-val" style="font-family: var(--font-mono); color: var(--accent-cyan); font-weight: 600;">5 Tons</span>
+            </div>
+            <input type="range" id="weight-slider" class="range-slider" min="1" max="40" step="1" value="5">
+          </div>
+
+          <div class="quote-result-card">
+            <div style="font-size: 0.85rem; color: var(--text-muted); text-transform: uppercase;">Estimated Shipping Rate</div>
+            <div class="quote-price" id="quote-price">₹18,750</div>
+            <div style="font-size: 0.85rem; color: var(--text-secondary);">Includes fuel surcharge & toll estimates</div>
+          </div>
+        </div>
+
+        <!-- Contact Form -->
+        <div id="contact" class="glass-card">
+          <h3 style="font-size: 1.5rem; margin-bottom: 1.5rem;"><i class="fa-solid fa-paper-plane" style="color: var(--accent-blue-light);"></i> Book Your Dispatch</h3>
+          
+          <form id="contact-form" onsubmit="handleFormSubmit(event)">
+            <div class="form-group">
+              <label for="name">Your Name / Company</label>
+              <input type="text" id="name" class="form-control" placeholder="e.g. Rahul Sharma (Apex Industrial)" required />
+            </div>
+
+            <div class="form-group">
+              <label for="email">Contact Email / Phone</label>
+              <input type="text" id="email" class="form-control" placeholder="name@company.com or +91 9876543210" required />
+            </div>
+
+            <div class="form-group">
+              <label for="details">Shipment Origin / Destination & Details</label>
+              <textarea id="details" class="form-control" rows="3" placeholder="Enter pickup location, destination city, and any specific cargo handling requirements..." required></textarea>
+            </div>
+
+            <button type="submit" class="btn btn-primary" style="width: 100%;">
+              <i class="fa-solid fa-truck-arrow-right"></i> Request Official Quote
+            </button>
+
+            <div id="form-status" class="form-status">
+              <i class="fa-solid fa-circle-check"></i> Thank you! Your freight request has been submitted to dispatch.
+            </div>
+          </form>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="section-wrapper">
+      
+      <div class="footer-grid">
+        <div>
+          <div class="nav-brand" style="margin-bottom: 1rem;">
+            <div class="nav-logo-icon"><i class="fa-solid fa-truck-fast"></i></div>
+            <div class="nav-title">AMANAT <span>LOGISTICS</span></div>
+          </div>
+          <p style="font-size: 0.95rem; max-width: 360px;">
+            Amanat Transport provides high-efficiency fleet logistics and freight solutions ensuring your cargo reaches its destination securely on time, every time.
+          </p>
+          <div class="social-links">
+            <a href="#" class="social-btn"><i class="fa-brands fa-twitter"></i></a>
+            <a href="#" class="social-btn"><i class="fa-brands fa-facebook-f"></i></a>
+            <a href="#" class="social-btn"><i class="fa-brands fa-instagram"></i></a>
+            <a href="#" class="social-btn"><i class="fa-brands fa-linkedin-in"></i></a>
+          </div>
+        </div>
+
+        <div>
+          <h4 style="margin-bottom: 1.25rem;">Navigation</h4>
+          <ul style="list-style: none; display: flex; flex-direction: column; gap: 0.75rem;">
+            <li><a href="#services" class="nav-link">Services</a></li>
+            <li><a href="#work" class="nav-link">Operations</a></li>
+            <li><a href="#about" class="nav-link">Company</a></li>
+            <li><a href="#calculator" class="nav-link">Freight Quote</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 style="margin-bottom: 1.25rem;">Depot Contact</h4>
+          <ul style="list-style: none; display: flex; flex-direction: column; gap: 0.75rem; font-size: 0.95rem; color: var(--text-secondary);">
+            <li><i class="fa-solid fa-phone" style="color: var(--accent-cyan);"></i> +91 9035002910</li>
+            <li><i class="fa-solid fa-envelope" style="color: var(--accent-cyan);"></i> dispatch@amanattransport.com</li>
+            <li><i class="fa-solid fa-clock" style="color: var(--accent-cyan);"></i> 24/7 Dispatch Control</li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 style="margin-bottom: 1.25rem;">Location</h4>
+          <a href="https://g.co/kgs/gUo8CB" target="_blank" class="btn btn-outline" style="font-size: 0.85rem;">
+            <i class="fa-solid fa-map-location-dot"></i> Open Google Maps
+          </a>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div>&copy; 2026 Amanat Transport. All Rights Reserved.</div>
+        <div>Because your success is our destination.</div>
+      </div>
+
+    </div>
+  </footer>
+
+  <!-- Floating Call CTA -->
+  <a href="tel:+919035002910" class="floating-call-btn">
+    <i class="fa-solid fa-phone-volume"></i> Direct Call: +91 9035002910
+  </a>
+
+  <!-- ==========================================================================
+     JAVASCRIPT LOGIC & THREE.JS 3D ANIMATION
+     ========================================================================== -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+  
+  <script>
+    /* --------------------------------------------------------------------------
+       1. Three.js 3D Interactive WebGL Particle Constellation Scene
+       -------------------------------------------------------------------------- */
+    const canvas = document.getElementById('webgl-canvas');
+    const scene = new THREE.Scene();
+    
+    // Camera
+    const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
+    camera.position.z = 400;
+
+    // Renderer
+    const renderer = new THREE.WebGLRenderer({ canvas: canvas, alpha: true, antialias: true });
+    renderer.setSize(window.innerWidth, window.innerHeight);
+    renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+
+    // Particle Nodes & Freight Grid Geometry
+    const particleCount = 200;
+    const geometry = new THREE.BufferGeometry();
+    const positions = new Float32Array(particleCount * 3);
+    const colors = new Float32Array(particleCount * 3);
+
+    const colorCyan = new THREE.Color(0x06b6d4);
+    const colorBlue = new THREE.Color(0x3b82f6);
+
+    for (let i = 0; i < particleCount; i++) {
+      positions[i * 3] = (Math.random() - 0.5) * 1000;
+      positions[i * 3 + 1] = (Math.random() - 0.5) * 1000;
+      positions[i * 3 + 2] = (Math.random() - 0.5) * 600;
+
+      const mixedColor = Math.random() > 0.5 ? colorCyan : colorBlue;
+      colors[i * 3] = mixedColor.r;
+      colors[i * 3 + 1] = mixedColor.g;
+      colors[i * 3 + 2] = mixedColor.b;
+    }
+
+    geometry.setAttribute('position', new THREE.BufferAttribute(positions, 3));
+    geometry.setAttribute('color', new THREE.BufferAttribute(colors, 3));
+
+    // Material
+    const pMaterial = new THREE.PointsMaterial({
+      size: 4,
+      vertexColors: true,
+      transparent: true,
+      opacity: 0.8
+    });
+
+    const particleSystem = new THREE.Points(geometry, pMaterial);
+    scene.add(particleSystem);
+
+    // Add 3D Wireframe Floating Nodes (Freight Network Elements)
+    const cubeGroup = new THREE.Group();
+    for (let i = 0; i < 8; i++) {
+      const boxGeo = new THREE.BoxGeometry(30, 30, 30);
+      const wireMat = new THREE.MeshBasicMaterial({ color: 0x3b82f6, wireframe: true, transparent: true, opacity: 0.15 });
+      const boxMesh = new THREE.Mesh(boxGeo, wireMat);
+      
+      boxMesh.position.set((Math.random() - 0.5) * 600, (Math.random() - 0.5) * 600, (Math.random() - 0.5) * 300);
+      cubeGroup.add(boxMesh);
+    }
+    scene.add(cubeGroup);
+
+    // Mouse Movement Parallax Control
+    let mouseX = 0, mouseY = 0;
+    let targetX = 0, targetY = 0;
+
+    window.addEventListener('mousemove', (e) => {
+      mouseX = (e.clientX - window.innerWidth / 2);
+      mouseY = (e.clientY - window.innerHeight / 2);
+    });
+
+    // Resize Handler
+    window.addEventListener('resize', () => {
+      camera.aspect = window.innerWidth / window.innerHeight;
+      camera.updateProjectionMatrix();
+      renderer.setSize(window.innerWidth, window.innerHeight);
+    });
+
+    // Animation Loop
+    function animate() {
+      requestAnimationFrame(animate);
+
+      targetX += (mouseX - targetX) * 0.03;
+      targetY += (mouseY - targetY) * 0.03;
+
+      particleSystem.rotation.y += 0.001;
+      particleSystem.rotation.x += 0.0005;
+
+      cubeGroup.rotation.y -= 0.002;
+      cubeGroup.rotation.x += 0.001;
+
+      camera.position.x = targetX * 0.4;
+      camera.position.y = -targetY * 0.4;
+      camera.lookAt(scene.position);
+
+      renderer.render(scene, camera);
+    }
+    animate();
+
+    /* --------------------------------------------------------------------------
+       2. 3D Card Tilt Micro-Interactions (Vanilla JS)
+       -------------------------------------------------------------------------- */
+    const tiltCards = document.querySelectorAll('.tilt-card');
+    
+    tiltCards.forEach(card => {
+      card.addEventListener('mousemove', (e) => {
+        const rect = card.getBoundingClientRect();
+        const x = e.clientX - rect.left;
+        const y = e.clientY - rect.top;
+        
+        const centerX = rect.width / 2;
+        const centerY = rect.height / 2;
+        
+        const rotateX = (y - centerY) / 15;
+        const rotateY = (centerX - x) / 15;
+        
+        card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale3d(1.02, 1.02, 1.02)`;
+      });
+
+      card.addEventListener('mouseleave', () => {
+        card.style.transform = 'perspective(1000px) rotateX(0deg) rotateY(0deg) scale3d(1, 1, 1)';
+      });
+    });
+
+    /* --------------------------------------------------------------------------
+       3. Interactive Freight Calculator Logic
+       -------------------------------------------------------------------------- */
+    const distanceSlider = document.getElementById('distance-slider');
+    const weightSlider = document.getElementById('weight-slider');
+    const serviceSelect = document.getElementById('service-tier');
+    
+    const distanceVal = document.getElementById('distance-val');
+    const weightVal = document.getElementById('weight-val');
+    const quotePrice = document.getElementById('quote-price');
+
+    function calculateQuote() {
+      const dist = parseInt(distanceSlider.value);
+      const weight = parseInt(weightSlider.value);
+      const service = serviceSelect.value;
+
+      distanceVal.textContent = dist + ' KM';
+      weightVal.textContent = weight + ' Tons';
+
+      // Base formula
+      let baseRatePerKm = 30; // ₹30/km base
+      let weightMultiplier = 1 + (weight * 0.08); // 8% addition per ton
+      
+      let serviceMultiplier = 1.0;
+      if (service === 'express') serviceMultiplier = 1.25;
+      if (service === 'heavy') serviceMultiplier = 1.40;
+
+      let total = dist * baseRatePerKm * weightMultiplier * serviceMultiplier;
+      
+      // Format INR Currency
+      quotePrice.textContent = '₹' + Math.round(total).toLocaleString('en-IN');
+    }
+
+    distanceSlider.addEventListener('input', calculateQuote);
+    weightSlider.addEventListener('input', calculateQuote);
+    serviceSelect.addEventListener('change', calculateQuote);
+
+    // Initial calculation
+    calculateQuote();
+
+    /* --------------------------------------------------------------------------
+       4. Form Submission Status Handler
+       -------------------------------------------------------------------------- */
+    function handleFormSubmit(e) {
+      e.preventDefault();
+      const statusDiv = document.getElementById('form-status');
+      statusDiv.classList.add('success');
+      
+      // Auto reset form feedback after 5 seconds
+      setTimeout(() => {
+        statusDiv.classList.remove('success');
+        document.getElementById('contact-form').reset();
+      }, 5000);
+    }
+  </script>
+</body>
 </html>
