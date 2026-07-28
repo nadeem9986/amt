@@ -3,10 +3,10 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Amanat Transport | Next-Gen Logistics & Freight Solutions</title>
+  <title>Amanat Transport | Executive Freight & Fleet Logistics</title>
   
   <!-- SEO Meta Tags -->
-  <meta name="description" content="Amanat Transport provides reliable, efficient, and secure logistics, long-haul freight, and supply chain solutions tailored for modern businesses." />
+  <meta name="description" content="Amanat Transport provides high-efficiency, reliable, and secure logistics, long-haul freight, and enterprise supply chain solutions." />
   
   <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -18,37 +18,38 @@
 
   <style>
     /* ==========================================================================
-       DESIGN SYSTEM & CSS VARIABLES
+       EXECUTIVE CORPORATE DESIGN SYSTEM & CSS VARIABLES
        ========================================================================== */
     :root {
-      --bg-primary: #030712;
-      --bg-secondary: #0B132B;
-      --bg-card: rgba(15, 23, 42, 0.65);
-      --bg-card-hover: rgba(30, 41, 59, 0.85);
+      --bg-primary: #0A1128;
+      --bg-secondary: #101B3B;
+      --bg-card: rgba(16, 27, 59, 0.75);
+      --bg-card-hover: rgba(26, 42, 86, 0.9);
       --border-color: rgba(255, 255, 255, 0.12);
-      --border-glow: rgba(59, 130, 246, 0.5);
+      --border-glow: rgba(245, 158, 11, 0.5);
       
-      --accent-blue: #3B82F6;
+      --accent-gold: #F59E0B;
+      --accent-gold-light: #FBBF24;
+      --accent-gold-dark: #D97706;
+      --accent-navy: #1E3A8A;
       --accent-blue-light: #60A5FA;
-      --accent-cyan: #06B6D4;
       --accent-emerald: #10B981;
-      --accent-purple: #8B5CF6;
       
-      --text-primary: #F8FAFC;
-      --text-secondary: #94A3B8;
-      --text-muted: #64748B;
+      --text-primary: #FFFFFF;
+      --text-secondary: #CBD5E1;
+      --text-muted: #94A3B8;
       
       --font-heading: 'Space Grotesk', sans-serif;
       --font-body: 'Plus Jakarta Sans', sans-serif;
       --font-mono: 'JetBrains Mono', monospace;
       
       --radius-sm: 8px;
-      --radius-md: 16px;
-      --radius-lg: 24px;
+      --radius-md: 14px;
+      --radius-lg: 20px;
       --radius-full: 9999px;
       
-      --shadow-glow: 0 0 30px rgba(59, 130, 246, 0.25);
-      --shadow-cyan: 0 0 30px rgba(6, 182, 212, 0.25);
+      --shadow-gold: 0 10px 30px rgba(245, 158, 11, 0.25);
+      --shadow-card: 0 20px 40px rgba(0, 0, 0, 0.4);
       --transition-smooth: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
     }
 
@@ -71,7 +72,7 @@
     body {
       min-height: 100vh;
       line-height: 1.6;
-      background: radial-gradient(circle at 50% 0%, #0F172A 0%, #030712 100%);
+      background: radial-gradient(circle at 50% 0%, #101B3B 0%, #0A1128 100%);
       position: relative;
     }
 
@@ -84,7 +85,7 @@
       height: 100vh;
       z-index: 0;
       pointer-events: none;
-      opacity: 0.85;
+      opacity: 0.75;
     }
 
     /* Typography */
@@ -120,11 +121,12 @@
       overflow: hidden;
       transition: var(--transition-smooth);
       transform-style: preserve-3d;
+      box-shadow: var(--shadow-card);
     }
 
     .glass-card:hover {
       border-color: var(--border-glow);
-      box-shadow: var(--shadow-glow);
+      box-shadow: var(--shadow-gold);
       background: var(--bg-card-hover);
     }
 
@@ -134,8 +136,8 @@
       top: 0;
       left: 0;
       right: 0;
-      height: 2px;
-      background: linear-gradient(90deg, transparent, var(--accent-cyan), var(--accent-blue), transparent);
+      height: 3px;
+      background: linear-gradient(90deg, transparent, var(--accent-gold), var(--accent-gold-light), transparent);
       opacity: 0;
       transition: var(--transition-smooth);
     }
@@ -151,20 +153,20 @@
       gap: 0.5rem;
       padding: 0.4rem 1rem;
       border-radius: var(--radius-full);
-      background: rgba(59, 130, 246, 0.12);
-      border: 1px solid rgba(59, 130, 246, 0.3);
-      color: var(--accent-blue-light);
+      background: rgba(245, 158, 11, 0.12);
+      border: 1px solid rgba(245, 158, 11, 0.35);
+      color: var(--accent-gold-light);
       font-size: 0.85rem;
       font-family: var(--font-mono);
-      font-weight: 500;
+      font-weight: 600;
       text-transform: uppercase;
       letter-spacing: 0.05em;
     }
 
-    .badge-cyan {
-      background: rgba(6, 182, 212, 0.12);
-      border-color: rgba(6, 182, 212, 0.3);
-      color: var(--accent-cyan);
+    .badge-navy {
+      background: rgba(30, 58, 138, 0.25);
+      border-color: rgba(96, 165, 250, 0.35);
+      color: var(--accent-blue-light);
     }
 
     /* Buttons */
@@ -176,7 +178,7 @@
       padding: 0.9rem 2rem;
       border-radius: var(--radius-full);
       font-family: var(--font-heading);
-      font-weight: 600;
+      font-weight: 700;
       font-size: 1rem;
       cursor: pointer;
       border: none;
@@ -186,40 +188,29 @@
     }
 
     .btn-primary {
-      background: linear-gradient(135deg, var(--accent-blue) 0%, var(--accent-cyan) 100%);
-      color: #ffffff;
-      box-shadow: 0 4px 20px rgba(59, 130, 246, 0.4);
+      background: linear-gradient(135deg, var(--accent-gold) 0%, var(--accent-gold-dark) 100%);
+      color: #0A1128;
+      box-shadow: 0 4px 20px rgba(245, 158, 11, 0.35);
     }
 
     .btn-primary:hover {
       transform: translateY(-2px);
-      box-shadow: 0 8px 30px rgba(6, 182, 212, 0.6);
+      box-shadow: 0 8px 30px rgba(245, 158, 11, 0.55);
       filter: brightness(1.1);
     }
 
     .btn-outline {
-      background: rgba(255, 255, 255, 0.03);
+      background: rgba(255, 255, 255, 0.05);
       border: 1px solid var(--border-color);
       color: var(--text-primary);
       backdrop-filter: blur(8px);
     }
 
     .btn-outline:hover {
-      border-color: var(--accent-blue-light);
-      background: rgba(59, 130, 246, 0.1);
-      color: #ffffff;
+      border-color: var(--accent-gold-light);
+      background: rgba(245, 158, 11, 0.12);
+      color: var(--accent-gold-light);
       transform: translateY(-2px);
-    }
-
-    .btn-emerald {
-      background: linear-gradient(135deg, var(--accent-emerald) 0%, #059669 100%);
-      color: #ffffff;
-      box-shadow: 0 4px 20px rgba(16, 185, 129, 0.3);
-    }
-
-    .btn-emerald:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 8px 30px rgba(16, 185, 129, 0.5);
     }
 
     /* Section Container */
@@ -240,7 +231,7 @@
     .section-header h2 {
       font-size: 2.75rem;
       margin: 1rem 0;
-      background: linear-gradient(180deg, #FFFFFF 0%, #94A3B8 100%);
+      background: linear-gradient(180deg, #FFFFFF 0%, #CBD5E1 100%);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
     }
@@ -256,10 +247,10 @@
       width: calc(100% - 3rem);
       max-width: 1280px;
       z-index: 100;
-      background: rgba(3, 7, 18, 0.75);
+      background: rgba(10, 17, 40, 0.85);
       backdrop-filter: blur(20px);
       -webkit-backdrop-filter: blur(20px);
-      border: 1px solid rgba(255, 255, 255, 0.1);
+      border: 1px solid rgba(255, 255, 255, 0.12);
       border-radius: var(--radius-full);
       padding: 0.75rem 1.75rem;
       display: flex;
@@ -278,13 +269,13 @@
       width: 42px;
       height: 42px;
       border-radius: var(--radius-full);
-      background: linear-gradient(135deg, var(--accent-blue) 0%, var(--accent-cyan) 100%);
+      background: linear-gradient(135deg, var(--accent-gold) 0%, var(--accent-gold-dark) 100%);
       display: flex;
       align-items: center;
       justify-content: center;
-      color: #ffffff;
+      color: #0A1128;
       font-size: 1.25rem;
-      box-shadow: 0 0 15px rgba(59, 130, 246, 0.5);
+      box-shadow: 0 0 15px rgba(245, 158, 11, 0.4);
     }
 
     .nav-title {
@@ -296,7 +287,7 @@
     }
 
     .nav-title span {
-      color: var(--accent-cyan);
+      color: var(--accent-gold-light);
     }
 
     .nav-links {
@@ -324,7 +315,7 @@
       left: 0;
       width: 0%;
       height: 2px;
-      background: var(--accent-cyan);
+      background: var(--accent-gold);
       transition: var(--transition-smooth);
       border-radius: 2px;
     }
@@ -337,15 +328,6 @@
       display: flex;
       align-items: center;
       gap: 1rem;
-    }
-
-    .mobile-toggle {
-      display: none;
-      background: none;
-      border: none;
-      color: #ffffff;
-      font-size: 1.5rem;
-      cursor: pointer;
     }
 
     /* ==========================================================================
@@ -376,7 +358,7 @@
     }
 
     .hero-content h1 span {
-      background: linear-gradient(135deg, var(--accent-cyan) 0%, var(--accent-blue-light) 100%);
+      background: linear-gradient(135deg, var(--accent-gold-light) 0%, var(--accent-gold) 100%);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
     }
@@ -401,7 +383,7 @@
       grid-template-columns: repeat(4, 1fr);
       gap: 1.5rem;
       padding: 1.75rem;
-      background: rgba(15, 23, 42, 0.7);
+      background: rgba(16, 27, 59, 0.7);
       backdrop-filter: blur(20px);
       border: 1px solid var(--border-color);
       border-radius: var(--radius-lg);
@@ -420,7 +402,7 @@
       font-family: var(--font-heading);
       font-size: 2.2rem;
       font-weight: 700;
-      color: var(--accent-cyan);
+      color: var(--accent-gold-light);
     }
 
     .counter-label {
@@ -441,7 +423,7 @@
       width: 100%;
       border-radius: var(--radius-lg);
       overflow: hidden;
-      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.6);
+      box-shadow: var(--shadow-card);
       border: 1px solid var(--border-color);
       transform-style: preserve-3d;
       transition: transform 0.5s ease-out;
@@ -459,15 +441,15 @@
       position: absolute;
       bottom: -1.5rem;
       left: -1.5rem;
-      background: rgba(11, 19, 43, 0.9);
+      background: rgba(10, 17, 40, 0.95);
       backdrop-filter: blur(20px);
-      border: 1px solid var(--accent-cyan);
+      border: 1px solid var(--accent-gold);
       border-radius: var(--radius-md);
       padding: 1.25rem;
       display: flex;
       align-items: center;
       gap: 1rem;
-      box-shadow: var(--shadow-cyan);
+      box-shadow: var(--shadow-gold);
       z-index: 5;
     }
 
@@ -475,8 +457,8 @@
       width: 48px;
       height: 48px;
       border-radius: var(--radius-md);
-      background: rgba(6, 182, 212, 0.15);
-      color: var(--accent-cyan);
+      background: rgba(245, 158, 11, 0.15);
+      color: var(--accent-gold-light);
       display: flex;
       align-items: center;
       justify-content: center;
@@ -506,12 +488,12 @@
       width: 60px;
       height: 60px;
       border-radius: var(--radius-md);
-      background: linear-gradient(135deg, rgba(59, 130, 246, 0.2) 0%, rgba(6, 182, 212, 0.2) 100%);
-      border: 1px solid rgba(59, 130, 246, 0.3);
+      background: linear-gradient(135deg, rgba(245, 158, 11, 0.2) 0%, rgba(30, 58, 138, 0.2) 100%);
+      border: 1px solid rgba(245, 158, 11, 0.35);
       display: flex;
       align-items: center;
       justify-content: center;
-      color: var(--accent-cyan);
+      color: var(--accent-gold-light);
       font-size: 1.75rem;
       margin-bottom: 1.5rem;
     }
@@ -532,7 +514,7 @@
       display: inline-flex;
       align-items: center;
       gap: 0.5rem;
-      color: var(--accent-cyan);
+      color: var(--accent-gold-light);
       font-weight: 600;
       font-size: 0.95rem;
     }
@@ -561,20 +543,12 @@
       margin-bottom: 6rem;
     }
 
-    .work-grid.reverse {
-      direction: rtl;
-    }
-
-    .work-grid.reverse > * {
-      direction: ltr;
-    }
-
     .work-img-wrapper {
       position: relative;
       border-radius: var(--radius-lg);
       overflow: hidden;
       border: 1px solid var(--border-color);
-      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
+      box-shadow: var(--shadow-card);
     }
 
     .work-img-wrapper img {
@@ -605,8 +579,8 @@
       width: 26px;
       height: 26px;
       border-radius: var(--radius-full);
-      background: rgba(16, 185, 129, 0.15);
-      color: var(--accent-emerald);
+      background: rgba(245, 158, 11, 0.15);
+      color: var(--accent-gold-light);
       display: flex;
       align-items: center;
       justify-content: center;
@@ -623,7 +597,7 @@
     }
 
     .about-card {
-      background: linear-gradient(135deg, rgba(15, 23, 42, 0.8) 0%, rgba(11, 19, 43, 0.9) 100%);
+      background: linear-gradient(135deg, rgba(16, 27, 59, 0.85) 0%, rgba(10, 17, 40, 0.95) 100%);
       border: 1px solid var(--border-glow);
       padding: 4rem;
       border-radius: var(--radius-lg);
@@ -667,7 +641,7 @@
     .form-control {
       width: 100%;
       padding: 1rem 1.25rem;
-      background: rgba(3, 7, 18, 0.6);
+      background: rgba(10, 17, 40, 0.7);
       border: 1px solid var(--border-color);
       border-radius: var(--radius-md);
       color: #ffffff;
@@ -678,8 +652,8 @@
     }
 
     .form-control:focus {
-      border-color: var(--accent-cyan);
-      box-shadow: 0 0 15px rgba(6, 182, 212, 0.25);
+      border-color: var(--accent-gold-light);
+      box-shadow: 0 0 15px rgba(245, 158, 11, 0.25);
     }
 
     select.form-control {
@@ -702,13 +676,13 @@
       background: rgba(255, 255, 255, 0.1);
       outline: none;
       cursor: pointer;
-      accent-color: var(--accent-cyan);
+      accent-color: var(--accent-gold-light);
     }
 
     /* Quote Output Card */
     .quote-result-card {
-      background: rgba(6, 182, 212, 0.06);
-      border: 1px solid rgba(6, 182, 212, 0.3);
+      background: rgba(245, 158, 11, 0.08);
+      border: 1px solid rgba(245, 158, 11, 0.35);
       border-radius: var(--radius-md);
       padding: 2rem;
       text-align: center;
@@ -718,7 +692,7 @@
     .quote-price {
       font-family: var(--font-heading);
       font-size: 3rem;
-      color: var(--accent-cyan);
+      color: var(--accent-gold-light);
       font-weight: 700;
       margin: 0.5rem 0;
     }
@@ -745,7 +719,7 @@
        ========================================================================== */
     .footer {
       border-top: 1px solid var(--border-color);
-      background: rgba(3, 7, 18, 0.95);
+      background: rgba(10, 17, 40, 0.95);
       padding: 4rem 0 2rem 0;
       position: relative;
       z-index: 10;
@@ -778,9 +752,9 @@
     }
 
     .social-btn:hover {
-      background: var(--accent-blue);
-      color: #ffffff;
-      border-color: var(--accent-blue);
+      background: var(--accent-gold);
+      color: #0A1128;
+      border-color: var(--accent-gold);
       transform: translateY(-3px);
     }
 
@@ -800,14 +774,14 @@
       bottom: 2rem;
       right: 2rem;
       z-index: 99;
-      background: linear-gradient(135deg, var(--accent-emerald) 0%, #059669 100%);
-      color: #ffffff;
+      background: linear-gradient(135deg, var(--accent-gold) 0%, var(--accent-gold-dark) 100%);
+      color: #0A1128;
       padding: 0.9rem 1.75rem;
       border-radius: var(--radius-full);
       display: flex;
       align-items: center;
       gap: 0.75rem;
-      box-shadow: 0 10px 25px rgba(16, 185, 129, 0.4);
+      box-shadow: 0 10px 25px rgba(245, 158, 11, 0.4);
       font-family: var(--font-heading);
       font-weight: 700;
       transition: var(--transition-smooth);
@@ -815,53 +789,25 @@
 
     .floating-call-btn:hover {
       transform: translateY(-4px) scale(1.03);
-      box-shadow: 0 15px 35px rgba(16, 185, 129, 0.6);
+      box-shadow: 0 15px 35px rgba(245, 158, 11, 0.6);
     }
 
-    /* ==========================================================================
-       RESPONSIVE MEDIA QUERIES
-       ========================================================================== */
+    /* Responsive Queries */
     @media (max-width: 1024px) {
       .hero-grid, .work-grid, .about-grid, .calc-grid, .footer-grid {
         grid-template-columns: 1fr;
       }
-      .hero-content h1 {
-        font-size: 2.8rem;
-      }
-      .counter-grid {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 1.5rem;
-      }
-      .counter-item {
-        border-right: none;
-      }
+      .hero-content h1 { font-size: 2.8rem; }
+      .counter-grid { grid-template-columns: repeat(2, 1fr); gap: 1.5rem; }
+      .counter-item { border-right: none; }
     }
 
     @media (max-width: 768px) {
-      .navbar {
-        width: calc(100% - 2rem);
-        padding: 0.75rem 1.25rem;
-      }
-      .nav-links {
-        display: none; /* Can be expanded via toggle */
-      }
-      .mobile-toggle {
-        display: block;
-      }
-      .hero-buttons {
-        flex-direction: column;
-      }
-      .btn {
-        width: 100%;
-      }
-      .counter-grid {
-        grid-template-columns: 1fr 1fr;
-      }
-      .footer-bottom {
-        flex-direction: column;
-        gap: 1rem;
-        text-align: center;
-      }
+      .navbar { width: calc(100% - 2rem); padding: 0.75rem 1.25rem; }
+      .nav-links { display: none; }
+      .hero-buttons { flex-direction: column; }
+      .btn { width: 100%; }
+      .footer-bottom { flex-direction: column; gap: 1rem; text-align: center; }
     }
   </style>
 </head>
@@ -881,8 +827,8 @@
     
     <ul class="nav-links">
       <li><a href="#services" class="nav-link">Services</a></li>
-      <li><a href="#work" class="nav-link">Work</a></li>
-      <li><a href="#about" class="nav-link">About</a></li>
+      <li><a href="#work" class="nav-link">Operations</a></li>
+      <li><a href="#about" class="nav-link">Company</a></li>
       <li><a href="#calculator" class="nav-link">Freight Quote</a></li>
       <li><a href="#contact" class="nav-link">Contact</a></li>
     </ul>
@@ -903,14 +849,14 @@
       <div class="hero-grid">
         
         <div class="hero-content">
-          <div class="badge badge-cyan">
+          <div class="badge">
             <i class="fa-solid fa-shield-halved"></i> Reliable • Efficient • Nationwide
           </div>
           
-          <h1>Where Reliability Meets <span>Next-Gen Logistics</span></h1>
+          <h1>Where Reliability Meets <span>Executive Logistics</span></h1>
           
           <p class="hero-subtitle">
-            Welcome to Amanat Transport. We specialize in seamless, high-speed freight transportation solutions connecting enterprises with their supply chain destination with security and absolute precision.
+            Welcome to Amanat Transport. We specialize in seamless, high-capacity freight solutions connecting enterprise supply chains with speed, safety, and absolute precision.
           </p>
           
           <div class="hero-buttons">
@@ -928,11 +874,11 @@
           <!-- Counter Stats -->
           <div class="counter-grid">
             <div class="counter-item">
-              <div class="counter-num" data-target="10">10M+</div>
+              <div class="counter-num">10M+</div>
               <div class="counter-label">Miles Covered</div>
             </div>
             <div class="counter-item">
-              <div class="counter-num" data-target="99">99.8%</div>
+              <div class="counter-num">99.8%</div>
               <div class="counter-label">On-Time Rate</div>
             </div>
             <div class="counter-item">
@@ -940,7 +886,7 @@
               <div class="counter-label">GPS Tracking</div>
             </div>
             <div class="counter-item">
-              <div class="counter-num" data-target="500">500+</div>
+              <div class="counter-num">500+</div>
               <div class="counter-label">Active Clients</div>
             </div>
           </div>
@@ -957,8 +903,8 @@
               <i class="fa-solid fa-satellite-dish"></i>
             </div>
             <div>
-              <div style="font-family: var(--font-heading); font-weight: 700; color: #ffffff;">Live Fleet Dispatch</div>
-              <div style="font-size: 0.85rem; color: var(--accent-cyan);">Real-time Telematics Active</div>
+              <div style="font-family: var(--font-heading); font-weight: 700; color: #ffffff;">Live Fleet Control</div>
+              <div style="font-size: 0.85rem; color: var(--accent-gold-light);">Real-time Telematics Active</div>
             </div>
           </div>
         </div>
@@ -972,9 +918,9 @@
     <div class="section-wrapper">
       
       <div class="section-header">
-        <div class="badge">Comprehensive Solutions</div>
-        <h2>Enterprise Freight & Transport Services</h2>
-        <p>From full truckload freight to time-sensitive express shipments, we deploy state-of-the-art fleet logistics tailored to your exact industry demands.</p>
+        <div class="badge">Enterprise Solutions</div>
+        <h2>High-Performance Freight Services</h2>
+        <p>From full truckload long-haul dispatch to express time-critical logistics, we deploy corporate-grade fleet solutions tailored to your operational demands.</p>
       </div>
 
       <div class="services-grid">
@@ -986,9 +932,9 @@
           </div>
           <h3 class="service-title">Full Truckload (FTL)</h3>
           <p class="service-desc">
-            Dedicated long-haul and regional transport for heavy industrial cargo. Direct point-to-point dispatch with zero intermediate handoffs.
+            Dedicated long-haul and regional transport for enterprise freight. Direct point-to-point dispatch with continuous chain-of-custody tracking.
           </p>
-          <a href="#contact" class="service-link">Inquire FTL Logistics <i class="fa-solid fa-arrow-right"></i></a>
+          <a href="#contact" class="service-link">Inquire FTL Transport <i class="fa-solid fa-arrow-right"></i></a>
         </div>
 
         <!-- Card 2 -->
@@ -998,9 +944,9 @@
           </div>
           <h3 class="service-title">Express Freight Dispatch</h3>
           <p class="service-desc">
-            Time-critical shipping solutions designed for high-priority shipments requiring expedited routing and continuous GPS monitoring.
+            Time-critical shipping solutions designed for high-priority goods requiring expedited routing and round-the-clock driver teams.
           </p>
-          <a href="#contact" class="service-link">Book Express Dispatch <i class="fa-solid fa-arrow-right"></i></a>
+          <a href="#contact" class="service-link">Book Priority Freight <i class="fa-solid fa-arrow-right"></i></a>
         </div>
 
         <!-- Card 3 -->
@@ -1010,7 +956,7 @@
           </div>
           <h3 class="service-title">Supply Chain Management</h3>
           <p class="service-desc">
-            End-to-end logistics coordination, route optimization, and scheduling to streamline supply chains for maximum operational efficiency.
+            End-to-end logistics coordination, fleet scheduling, and route optimization designed to maximize delivery speed and reduce operational waste.
           </p>
           <a href="#contact" class="service-link">Explore Coordination <i class="fa-solid fa-arrow-right"></i></a>
         </div>
@@ -1020,50 +966,50 @@
           <div class="service-icon-box">
             <i class="fa-solid fa-shield-cat"></i>
           </div>
-          <h3 class="service-title">Secure & Insured Transit</h3>
+          <h3 class="service-title">Insured & Secure Transit</h3>
           <p class="service-desc">
-            Full comprehensive cargo coverage and tamper-evident security protocols safeguarding high-value enterprise goods in transit.
+            Comprehensive cargo coverage and tamper-evident security protocols safeguarding high-value commercial shipments across all routes.
           </p>
-          <a href="#contact" class="service-link">Learn Safety Standards <i class="fa-solid fa-arrow-right"></i></a>
+          <a href="#contact" class="service-link">View Security Protocols <i class="fa-solid fa-arrow-right"></i></a>
         </div>
 
       </div>
     </div>
   </section>
 
-  <!-- Work & Operations Showcase -->
+  <!-- Operations Showcase -->
   <section id="work" class="work-section">
     <div class="section-wrapper">
       
       <div class="work-grid">
         <div class="work-img-wrapper tilt-card">
-          <img src="images/pic02.jpg" alt="Logistical Precision Operations" />
+          <img src="images/pic02.jpg" alt="Logistics Precision Operations" />
         </div>
         
         <div>
-          <div class="badge badge-cyan">Precision Execution</div>
-          <h2 style="font-size: 2.5rem; margin: 1rem 0;">The Artistry of Modern Logistics</h2>
+          <div class="badge badge-navy">Corporate Precision</div>
+          <h2 style="font-size: 2.5rem; margin: 1rem 0;">Logistical Precision & Fleet Integrity</h2>
           <p>
-            At Amanat Transport, our work is a finely tuned symphony of precision and dedication. Every shipment is backed by skilled transport professionals and intelligent routing technology to maximize speed and minimize downtime.
+            At Amanat Transport, logistics is an exacting discipline. Every shipment is managed by skilled logistics coordinators utilizing intelligent telemetry to optimize delivery cycles and ensure safety.
           </p>
 
           <ul class="feature-list">
             <li class="feature-item">
               <div class="feature-check"><i class="fa-solid fa-check"></i></div>
               <div>
-                <strong style="color: #ffffff;">Automated Route Optimization:</strong> Reducing fuel burn and transit time through smart telemetry.
+                <strong style="color: #ffffff;">Intelligent Route Optimization:</strong> Minimizing transit times and fuel burn through real-time traffic analysis.
               </div>
             </li>
             <li class="feature-item">
               <div class="feature-check"><i class="fa-solid fa-check"></i></div>
               <div>
-                <strong style="color: #ffffff;">24/7 Dedicated Control Center:</strong> Proactive weather and traffic monitoring around the clock.
+                <strong style="color: #ffffff;">24/7 Dispatch Control Room:</strong> Continuous oversight and proactive weather contingency management.
               </div>
             </li>
             <li class="feature-item">
               <div class="feature-check"><i class="fa-solid fa-check"></i></div>
               <div>
-                <strong style="color: #ffffff;">Transparent Milestone Tracking:</strong> Live status updates delivered to your dashboard at every stage.
+                <strong style="color: #ffffff;">Transparent Milestone Telematics:</strong> Direct status updates and automated arrival notifications.
               </div>
             </li>
           </ul>
@@ -1080,24 +1026,24 @@
         <div class="about-grid">
           
           <div>
-            <div class="badge">Building Lasting Partnerships</div>
-            <h2 style="font-size: 2.5rem; margin: 1rem 0;">More Than Just a Transport Company</h2>
+            <div class="badge">Building Trust & Value</div>
+            <h2 style="font-size: 2.5rem; margin: 1rem 0;">A Legacy of Logistics Excellence</h2>
             <p style="margin-bottom: 1.5rem;">
-              We are a team of dedicated professionals passionate about elevating regional freight standards. Amanat Transport stands as a facilitator of growth, a guardian of deadlines, and a proponent of unparalleled service quality.
+              We are a team of dedicated professionals passionate about providing top-tier freight services tailored to the unique operational demands of our clients.
             </p>
             <p>
-              Whether you are an emerging business seeking scalable shipping or an established corporate enterprise requiring high-capacity fleet management, we deliver peace of mind with every load.
+              Whether you are an expanding regional business or a large enterprise seeking optimized supply chain solutions, Amanat Transport delivers transparency, reliability, and total peace of mind.
             </p>
             <div style="margin-top: 2rem;">
-              <a href="tel:+919035002910" class="btn btn-emerald">
-                <i class="fa-solid fa-headset"></i> Talk to a Fleet Specialist
+              <a href="tel:+919035002910" class="btn btn-primary">
+                <i class="fa-solid fa-headset"></i> Speak to Dispatch Manager
               </a>
             </div>
           </div>
 
           <div class="hero-visual-card">
             <div class="hero-3d-box tilt-card">
-              <img src="images/pic03.jpg" alt="Amanat Transport Fleet Operations" />
+              <img src="images/pic03.jpg" alt="About Amanat Transport Fleet" />
             </div>
           </div>
 
@@ -1111,19 +1057,19 @@
     <div class="section-wrapper">
       
       <div class="section-header">
-        <div class="badge badge-cyan">Instant Estimation</div>
-        <h2>Interactive Freight Quote Calculator</h2>
-        <p>Estimate your shipping cost instantly or submit a request directly to our dispatch team for a custom enterprise quotation.</p>
+        <div class="badge">Instant Estimation</div>
+        <h2>Freight Quote Rate Estimator</h2>
+        <p>Calculate your estimated freight rate instantly or submit your shipping manifest directly to our dispatch division.</p>
       </div>
 
       <div class="calc-grid">
         
         <!-- Interactive Estimator -->
         <div class="glass-card">
-          <h3 style="font-size: 1.5rem; margin-bottom: 1.5rem;"><i class="fa-solid fa-calculator" style="color: var(--accent-cyan);"></i> Shipping Cost Estimator</h3>
+          <h3 style="font-size: 1.5rem; margin-bottom: 1.5rem;"><i class="fa-solid fa-calculator" style="color: var(--accent-gold-light);"></i> Rate Calculator</h3>
           
           <div class="form-group">
-            <label for="service-tier">Select Service Level</label>
+            <label for="service-tier">Service Level</label>
             <select id="service-tier" class="form-control">
               <option value="standard">Standard Full Truckload (FTL)</option>
               <option value="express">Express Priority Freight (+25%)</option>
@@ -1134,7 +1080,7 @@
           <div class="slider-container">
             <div style="display: flex; justify-content: space-between; margin-bottom: 0.5rem;">
               <label>Estimated Distance (KM)</label>
-              <span id="distance-val" style="font-family: var(--font-mono); color: var(--accent-cyan); font-weight: 600;">250 KM</span>
+              <span id="distance-val" style="font-family: var(--font-mono); color: var(--accent-gold-light); font-weight: 600;">250 KM</span>
             </div>
             <input type="range" id="distance-slider" class="range-slider" min="50" max="2500" step="25" value="250">
           </div>
@@ -1142,13 +1088,13 @@
           <div class="slider-container">
             <div style="display: flex; justify-content: space-between; margin-bottom: 0.5rem;">
               <label>Cargo Weight (Tons)</label>
-              <span id="weight-val" style="font-family: var(--font-mono); color: var(--accent-cyan); font-weight: 600;">5 Tons</span>
+              <span id="weight-val" style="font-family: var(--font-mono); color: var(--accent-gold-light); font-weight: 600;">5 Tons</span>
             </div>
             <input type="range" id="weight-slider" class="range-slider" min="1" max="40" step="1" value="5">
           </div>
 
           <div class="quote-result-card">
-            <div style="font-size: 0.85rem; color: var(--text-muted); text-transform: uppercase;">Estimated Shipping Rate</div>
+            <div style="font-size: 0.85rem; color: var(--text-muted); text-transform: uppercase;">Estimated Rate Quote</div>
             <div class="quote-price" id="quote-price">₹18,750</div>
             <div style="font-size: 0.85rem; color: var(--text-secondary);">Includes fuel surcharge & toll estimates</div>
           </div>
@@ -1156,11 +1102,11 @@
 
         <!-- Contact Form -->
         <div id="contact" class="glass-card">
-          <h3 style="font-size: 1.5rem; margin-bottom: 1.5rem;"><i class="fa-solid fa-paper-plane" style="color: var(--accent-blue-light);"></i> Book Your Dispatch</h3>
+          <h3 style="font-size: 1.5rem; margin-bottom: 1.5rem;"><i class="fa-solid fa-paper-plane" style="color: var(--accent-gold-light);"></i> Dispatch Request</h3>
           
           <form id="contact-form" onsubmit="handleFormSubmit(event)">
             <div class="form-group">
-              <label for="name">Your Name / Company</label>
+              <label for="name">Name / Enterprise</label>
               <input type="text" id="name" class="form-control" placeholder="e.g. Rahul Sharma (Apex Industrial)" required />
             </div>
 
@@ -1170,16 +1116,16 @@
             </div>
 
             <div class="form-group">
-              <label for="details">Shipment Origin / Destination & Details</label>
-              <textarea id="details" class="form-control" rows="3" placeholder="Enter pickup location, destination city, and any specific cargo handling requirements..." required></textarea>
+              <label for="details">Cargo Manifest & Routing Details</label>
+              <textarea id="details" class="form-control" rows="3" placeholder="Enter pickup city, destination, cargo weight, and any specialized handling needs..." required></textarea>
             </div>
 
             <button type="submit" class="btn btn-primary" style="width: 100%;">
-              <i class="fa-solid fa-truck-arrow-right"></i> Request Official Quote
+              <i class="fa-solid fa-truck-arrow-right"></i> Submit Official Quote Request
             </button>
 
             <div id="form-status" class="form-status">
-              <i class="fa-solid fa-circle-check"></i> Thank you! Your freight request has been submitted to dispatch.
+              <i class="fa-solid fa-circle-check"></i> Thank you! Your request has been transmitted to dispatch.
             </div>
           </form>
         </div>
@@ -1200,7 +1146,7 @@
             <div class="nav-title">AMANAT <span>LOGISTICS</span></div>
           </div>
           <p style="font-size: 0.95rem; max-width: 360px;">
-            Amanat Transport provides high-efficiency fleet logistics and freight solutions ensuring your cargo reaches its destination securely on time, every time.
+            Amanat Transport provides high-efficiency fleet logistics and enterprise freight solutions ensuring cargo reaches its destination safely and on schedule.
           </p>
           <div class="social-links">
             <a href="#" class="social-btn"><i class="fa-brands fa-twitter"></i></a>
@@ -1216,21 +1162,21 @@
             <li><a href="#services" class="nav-link">Services</a></li>
             <li><a href="#work" class="nav-link">Operations</a></li>
             <li><a href="#about" class="nav-link">Company</a></li>
-            <li><a href="#calculator" class="nav-link">Freight Quote</a></li>
+            <li><a href="#calculator" class="nav-link">Freight Calculator</a></li>
           </ul>
         </div>
 
         <div>
           <h4 style="margin-bottom: 1.25rem;">Depot Contact</h4>
           <ul style="list-style: none; display: flex; flex-direction: column; gap: 0.75rem; font-size: 0.95rem; color: var(--text-secondary);">
-            <li><i class="fa-solid fa-phone" style="color: var(--accent-cyan);"></i> +91 9035002910</li>
-            <li><i class="fa-solid fa-envelope" style="color: var(--accent-cyan);"></i> dispatch@amanattransport.com</li>
-            <li><i class="fa-solid fa-clock" style="color: var(--accent-cyan);"></i> 24/7 Dispatch Control</li>
+            <li><i class="fa-solid fa-phone" style="color: var(--accent-gold-light);"></i> +91 9035002910</li>
+            <li><i class="fa-solid fa-envelope" style="color: var(--accent-gold-light);"></i> dispatch@amanattransport.com</li>
+            <li><i class="fa-solid fa-clock" style="color: var(--accent-gold-light);"></i> 24/7 Dispatch Control</li>
           </ul>
         </div>
 
         <div>
-          <h4 style="margin-bottom: 1.25rem;">Location</h4>
+          <h4 style="margin-bottom: 1.25rem;">Depot Location</h4>
           <a href="https://g.co/kgs/gUo8CB" target="_blank" class="btn btn-outline" style="font-size: 0.85rem;">
             <i class="fa-solid fa-map-location-dot"></i> Open Google Maps
           </a>
@@ -1247,7 +1193,7 @@
 
   <!-- Floating Call CTA -->
   <a href="tel:+919035002910" class="floating-call-btn">
-    <i class="fa-solid fa-phone-volume"></i> Direct Call: +91 9035002910
+    <i class="fa-solid fa-phone-volume"></i> Call Dispatch: +91 9035002910
   </a>
 
   <!-- ==========================================================================
@@ -1272,20 +1218,20 @@
     renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
 
     // Particle Nodes & Freight Grid Geometry
-    const particleCount = 200;
+    const particleCount = 180;
     const geometry = new THREE.BufferGeometry();
     const positions = new Float32Array(particleCount * 3);
     const colors = new Float32Array(particleCount * 3);
 
-    const colorCyan = new THREE.Color(0x06b6d4);
-    const colorBlue = new THREE.Color(0x3b82f6);
+    const colorGold = new THREE.Color(0xf59e0b);
+    const colorNavy = new THREE.Color(0x1e3a8a);
 
     for (let i = 0; i < particleCount; i++) {
       positions[i * 3] = (Math.random() - 0.5) * 1000;
       positions[i * 3 + 1] = (Math.random() - 0.5) * 1000;
       positions[i * 3 + 2] = (Math.random() - 0.5) * 600;
 
-      const mixedColor = Math.random() > 0.5 ? colorCyan : colorBlue;
+      const mixedColor = Math.random() > 0.4 ? colorGold : colorNavy;
       colors[i * 3] = mixedColor.r;
       colors[i * 3 + 1] = mixedColor.g;
       colors[i * 3 + 2] = mixedColor.b;
@@ -1299,17 +1245,17 @@
       size: 4,
       vertexColors: true,
       transparent: true,
-      opacity: 0.8
+      opacity: 0.7
     });
 
     const particleSystem = new THREE.Points(geometry, pMaterial);
     scene.add(particleSystem);
 
-    // Add 3D Wireframe Floating Nodes (Freight Network Elements)
+    // 3D Wireframe Corporate Fleet Cubes
     const cubeGroup = new THREE.Group();
-    for (let i = 0; i < 8; i++) {
-      const boxGeo = new THREE.BoxGeometry(30, 30, 30);
-      const wireMat = new THREE.MeshBasicMaterial({ color: 0x3b82f6, wireframe: true, transparent: true, opacity: 0.15 });
+    for (let i = 0; i < 7; i++) {
+      const boxGeo = new THREE.BoxGeometry(28, 28, 28);
+      const wireMat = new THREE.MeshBasicMaterial({ color: 0xf59e0b, wireframe: true, transparent: true, opacity: 0.12 });
       const boxMesh = new THREE.Mesh(boxGeo, wireMat);
       
       boxMesh.position.set((Math.random() - 0.5) * 600, (Math.random() - 0.5) * 600, (Math.random() - 0.5) * 300);
@@ -1317,7 +1263,7 @@
     }
     scene.add(cubeGroup);
 
-    // Mouse Movement Parallax Control
+    // Mouse Parallax Control
     let mouseX = 0, mouseY = 0;
     let targetX = 0, targetY = 0;
 
@@ -1326,28 +1272,26 @@
       mouseY = (e.clientY - window.innerHeight / 2);
     });
 
-    // Resize Handler
     window.addEventListener('resize', () => {
       camera.aspect = window.innerWidth / window.innerHeight;
       camera.updateProjectionMatrix();
       renderer.setSize(window.innerWidth, window.innerHeight);
     });
 
-    // Animation Loop
     function animate() {
       requestAnimationFrame(animate);
 
       targetX += (mouseX - targetX) * 0.03;
       targetY += (mouseY - targetY) * 0.03;
 
-      particleSystem.rotation.y += 0.001;
-      particleSystem.rotation.x += 0.0005;
+      particleSystem.rotation.y += 0.0008;
+      particleSystem.rotation.x += 0.0004;
 
-      cubeGroup.rotation.y -= 0.002;
-      cubeGroup.rotation.x += 0.001;
+      cubeGroup.rotation.y -= 0.0015;
+      cubeGroup.rotation.x += 0.0008;
 
-      camera.position.x = targetX * 0.4;
-      camera.position.y = -targetY * 0.4;
+      camera.position.x = targetX * 0.35;
+      camera.position.y = -targetY * 0.35;
       camera.lookAt(scene.position);
 
       renderer.render(scene, camera);
@@ -1355,7 +1299,7 @@
     animate();
 
     /* --------------------------------------------------------------------------
-       2. 3D Card Tilt Micro-Interactions (Vanilla JS)
+       2. 3D Card Tilt Micro-Interactions
        -------------------------------------------------------------------------- */
     const tiltCards = document.querySelectorAll('.tilt-card');
     
@@ -1368,8 +1312,8 @@
         const centerX = rect.width / 2;
         const centerY = rect.height / 2;
         
-        const rotateX = (y - centerY) / 15;
-        const rotateY = (centerX - x) / 15;
+        const rotateX = (y - centerY) / 16;
+        const rotateY = (centerX - x) / 16;
         
         card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale3d(1.02, 1.02, 1.02)`;
       });
@@ -1380,7 +1324,7 @@
     });
 
     /* --------------------------------------------------------------------------
-       3. Interactive Freight Calculator Logic
+       3. Freight Calculator Logic
        -------------------------------------------------------------------------- */
     const distanceSlider = document.getElementById('distance-slider');
     const weightSlider = document.getElementById('weight-slider');
@@ -1398,9 +1342,8 @@
       distanceVal.textContent = dist + ' KM';
       weightVal.textContent = weight + ' Tons';
 
-      // Base formula
-      let baseRatePerKm = 30; // ₹30/km base
-      let weightMultiplier = 1 + (weight * 0.08); // 8% addition per ton
+      let baseRatePerKm = 30; 
+      let weightMultiplier = 1 + (weight * 0.08); 
       
       let serviceMultiplier = 1.0;
       if (service === 'express') serviceMultiplier = 1.25;
@@ -1408,7 +1351,6 @@
 
       let total = dist * baseRatePerKm * weightMultiplier * serviceMultiplier;
       
-      // Format INR Currency
       quotePrice.textContent = '₹' + Math.round(total).toLocaleString('en-IN');
     }
 
@@ -1416,7 +1358,6 @@
     weightSlider.addEventListener('input', calculateQuote);
     serviceSelect.addEventListener('change', calculateQuote);
 
-    // Initial calculation
     calculateQuote();
 
     /* --------------------------------------------------------------------------
@@ -1427,7 +1368,6 @@
       const statusDiv = document.getElementById('form-status');
       statusDiv.classList.add('success');
       
-      // Auto reset form feedback after 5 seconds
       setTimeout(() => {
         statusDiv.classList.remove('success');
         document.getElementById('contact-form').reset();
