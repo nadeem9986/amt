@@ -76,6 +76,55 @@
       --transition-smooth: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
     }
 
+    /* Light Corporate Theme Overrides */
+    body.light-theme {
+      --bg-primary: #F8FAFC;
+      --bg-secondary: #FFFFFF;
+      --bg-card: rgba(255, 255, 255, 0.9);
+      --bg-card-hover: #FFFFFF;
+      --border-color: rgba(15, 23, 42, 0.12);
+      --border-glow: rgba(217, 119, 6, 0.6);
+      --text-primary: #0F172A;
+      --text-secondary: #334155;
+      --text-muted: #64748B;
+      background: radial-gradient(circle at 50% 0%, #FFFFFF 0%, #F1F5F9 100%);
+    }
+
+    body.light-theme .navbar {
+      background: rgba(255, 255, 255, 0.85);
+      border-color: rgba(15, 23, 42, 0.12);
+    }
+
+    body.light-theme .nav-title {
+      color: #0F172A;
+    }
+
+    body.light-theme .form-control {
+      background: #FFFFFF;
+      color: #0F172A;
+      border-color: rgba(15, 23, 42, 0.2);
+    }
+
+    .theme-toggle-btn {
+      width: 40px;
+      height: 40px;
+      border-radius: var(--radius-full);
+      background: rgba(255, 255, 255, 0.1);
+      border: 1px solid var(--border-color);
+      color: var(--accent-gold-light);
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.1rem;
+      transition: var(--transition-smooth);
+    }
+
+    .theme-toggle-btn:hover {
+      transform: scale(1.1);
+      border-color: var(--accent-gold);
+    }
+
     /* Reset & Base Settings */
     *, *::before, *::after {
       box-sizing: border-box;
@@ -857,6 +906,9 @@
     </ul>
 
     <div class="nav-actions">
+      <button onclick="toggleTheme()" class="theme-toggle-btn" title="Toggle Dark Navy / Light Corporate Theme">
+        <i class="fa-solid fa-sun" id="theme-icon"></i>
+      </button>
       <a href="tel:+919035002910" class="btn btn-outline" style="padding: 0.6rem 1.25rem; font-size: 0.9rem;">
         <i class="fa-solid fa-phone"></i> +91 9035002910
       </a>
@@ -1450,11 +1502,24 @@
       const isVisible = answer.style.display === 'block';
 
       document.querySelectorAll('.faq-answer').forEach(el => el.style.display = 'none');
-      document.querySelectorAll('.faq-question i').forEach(el => el.style.transform = 'rotate(0deg)');
-
       if (!isVisible) {
         answer.style.display = 'block';
         icon.style.transform = 'rotate(180deg)';
+      }
+    }
+
+    /* --------------------------------------------------------------------------
+       6. Dual Theme Toggle Handler (Dark Executive / Light Corporate)
+       -------------------------------------------------------------------------- */
+    function toggleTheme() {
+      const body = document.body;
+      const themeIcon = document.getElementById('theme-icon');
+      body.classList.toggle('light-theme');
+
+      if (body.classList.contains('light-theme')) {
+        themeIcon.className = 'fa-solid fa-moon';
+      } else {
+        themeIcon.className = 'fa-solid fa-sun';
       }
     }
   </script>
