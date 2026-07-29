@@ -1345,8 +1345,8 @@
     renderer.setSize(window.innerWidth, window.innerHeight);
     renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
 
-    // Particle Nodes & Freight Grid Geometry
-    const particleCount = 180;
+    // Particle Nodes & Freight Grid Geometry (Mobile Throttled)
+    const particleCount = window.innerWidth < 768 ? 75 : 180;
     const geometry = new THREE.BufferGeometry();
     const positions = new Float32Array(particleCount * 3);
     const colors = new Float32Array(particleCount * 3);
@@ -1381,7 +1381,8 @@
 
     // 3D Wireframe Corporate Fleet Cubes
     const cubeGroup = new THREE.Group();
-    for (let i = 0; i < 7; i++) {
+    const boxCount = window.innerWidth < 768 ? 3 : 7;
+    for (let i = 0; i < boxCount; i++) {
       const boxGeo = new THREE.BoxGeometry(28, 28, 28);
       const wireMat = new THREE.MeshBasicMaterial({ color: 0xf59e0b, wireframe: true, transparent: true, opacity: 0.12 });
       const boxMesh = new THREE.Mesh(boxGeo, wireMat);
@@ -1391,14 +1392,14 @@
     }
     scene.add(cubeGroup);
 
-    // Mouse Parallax Control
+    // Mouse Parallax Control with Passive Listener
     let mouseX = 0, mouseY = 0;
     let targetX = 0, targetY = 0;
 
     window.addEventListener('mousemove', (e) => {
       mouseX = (e.clientX - window.innerWidth / 2);
       mouseY = (e.clientY - window.innerHeight / 2);
-    });
+    }, { passive: true });
 
     window.addEventListener('resize', () => {
       camera.aspect = window.innerWidth / window.innerHeight;
