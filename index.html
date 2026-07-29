@@ -1155,6 +1155,56 @@
 
       </div>
 
+  <!-- FAQ Section -->
+  <section id="faq" class="calculator-section" style="padding-top: 0;">
+    <div class="section-wrapper">
+      <div class="section-header">
+        <div class="badge">Frequently Asked Questions</div>
+        <h2>Freight & Dispatch Guidance</h2>
+        <p>Everything you need to know about our fleet operations, shipment insurance, and dispatch procedures.</p>
+      </div>
+
+      <div class="glass-card" style="max-width: 900px; margin: 0 auto;">
+        <div class="faq-item" style="border-bottom: 1px solid var(--border-color); padding: 1.25rem 0;">
+          <div class="faq-question" onclick="toggleFaq(this)" style="display: flex; justify-content: space-between; align-items: center; cursor: pointer; font-family: var(--font-heading); font-size: 1.2rem; font-weight: 700;">
+            <span>What types of cargo and volume does Amanat Transport handle?</span>
+            <i class="fa-solid fa-chevron-down" style="color: var(--accent-gold-light); transition: var(--transition-smooth);"></i>
+          </div>
+          <div class="faq-answer" style="display: none; padding-top: 1rem; color: var(--text-secondary);">
+            We specialize in Full Truckload (FTL), Heavy Industrial Freight, Express Commercial Freight, and specialized containerized transport. Our fleet can handle single-pallet dispatches up to 40-ton multi-axle heavy trailers.
+          </div>
+        </div>
+
+        <div class="faq-item" style="border-bottom: 1px solid var(--border-color); padding: 1.25rem 0;">
+          <div class="faq-question" onclick="toggleFaq(this)" style="display: flex; justify-content: space-between; align-items: center; cursor: pointer; font-family: var(--font-heading); font-size: 1.2rem; font-weight: 700;">
+            <span>How does your 24/7 real-time GPS tracking work?</span>
+            <i class="fa-solid fa-chevron-down" style="color: var(--accent-gold-light); transition: var(--transition-smooth);"></i>
+          </div>
+          <div class="faq-answer" style="display: none; padding-top: 1rem; color: var(--text-secondary);">
+            Every vehicle in our fleet is equipped with satellite-linked telemetry systems. Once your shipment is dispatched, you receive a direct tracking link displaying live coordinates, estimated time of arrival (ETA), and route milestones.
+          </div>
+        </div>
+
+        <div class="faq-item" style="border-bottom: 1px solid var(--border-color); padding: 1.25rem 0;">
+          <div class="faq-question" onclick="toggleFaq(this)" style="display: flex; justify-content: space-between; align-items: center; cursor: pointer; font-family: var(--font-heading); font-size: 1.2rem; font-weight: 700;">
+            <span>Are shipments fully insured during transit?</span>
+            <i class="fa-solid fa-chevron-down" style="color: var(--accent-gold-light); transition: var(--transition-smooth);"></i>
+          </div>
+          <div class="faq-answer" style="display: none; padding-top: 1rem; color: var(--text-secondary);">
+            Yes, all dispatches handled by Amanat Transport carry comprehensive commercial cargo insurance. Additional high-value cargo coverage riders can also be applied based on manifest declarations.
+          </div>
+        </div>
+
+        <div class="faq-item" style="padding: 1.25rem 0 0 0;">
+          <div class="faq-question" onclick="toggleFaq(this)" style="display: flex; justify-content: space-between; align-items: center; cursor: pointer; font-family: var(--font-heading); font-size: 1.2rem; font-weight: 700;">
+            <span>How can I request an immediate dispatch or custom quote?</span>
+            <i class="fa-solid fa-chevron-down" style="color: var(--accent-gold-light); transition: var(--transition-smooth);"></i>
+          </div>
+          <div class="faq-answer" style="display: none; padding-top: 1rem; color: var(--text-secondary);">
+            You can use our online Rate Estimator above, submit a Dispatch Request form, or call our 24/7 hotline directly at +91 9035002910 for immediate vehicle assignment.
+          </div>
+        </div>
+      </div>
     </div>
   </section>
 
@@ -1391,10 +1441,21 @@
       const statusDiv = document.getElementById('form-status');
       statusDiv.classList.add('success');
       
-      setTimeout(() => {
-        statusDiv.classList.remove('success');
-        document.getElementById('contact-form').reset();
-      }, 5000);
+    /* --------------------------------------------------------------------------
+       5. FAQ Accordion Toggle Handler
+       -------------------------------------------------------------------------- */
+    function toggleFaq(element) {
+      const answer = element.nextElementSibling;
+      const icon = element.querySelector('i');
+      const isVisible = answer.style.display === 'block';
+
+      document.querySelectorAll('.faq-answer').forEach(el => el.style.display = 'none');
+      document.querySelectorAll('.faq-question i').forEach(el => el.style.transform = 'rotate(0deg)');
+
+      if (!isVisible) {
+        answer.style.display = 'block';
+        icon.style.transform = 'rotate(180deg)';
+      }
     }
   </script>
 </body>
