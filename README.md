@@ -35,7 +35,7 @@ A state-of-the-art, high-converting enterprise web application for **Amanat Tran
 ## 📁 Repository Structure
 
 ```text
-C:\Users\nad\amt/
+amt/
 ├── index.html                  # Single-file bundled Web Application (HTML, CSS, JS, Three.js)
 ├── top_logistics_websites.md   # Architectural reference guide of top revenue-generating logistics sites
 ├── README.md                   # Complete repository documentation
